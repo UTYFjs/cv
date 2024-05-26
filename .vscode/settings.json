@@ -1,0 +1,14 @@
+{
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "stylelint.useLocal": "explicit",
+    "stylelint.autoFixOnSave": "explicit",
+    "eslint.autoFixOnSave": "explicit"
+  },
+}

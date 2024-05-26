@@ -1,0 +1,25 @@
+@import './variables';
+
+@mixin for-tablet {
+  @media (min-width: $phone-size) and (max-width: $tablet-size) {
+    @content;
+  }
+}
+
+@mixin for-phone {
+  @media (max-width: $phone-size) {
+    @content;
+
+
+
+  }
+}
+
+@mixin flex($direction: row, $justify: start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+align-items: $align;
+    justify-content: $justify;
+
+
+}

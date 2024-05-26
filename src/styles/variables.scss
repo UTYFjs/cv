@@ -1,0 +1,57 @@
+// Cold colors
+$aqua1: #7fdbff;
+$blue1: #0074d9;
+$navy1: #001f3f;
+$teal1: #39cccc;
+$green1: #2ecc40;
+$olive1: #3d9970;
+$lime1: #01ff70;
+
+// Warm colors
+$yellow1: #ffdc00;
+$orange1: #ff851b;
+$red1: #ff4136;
+$fuchsia1: #f012be;
+$purple1: #b10dc9;
+$maroon1: #85144b;
+
+// Grayscale
+$white1: #fff;
+$silver1: #ddd;
+$gray1: #aaa;
+$black1: #111;
+
+// character
+$character-light-title-85: #262626;
+$character-light-primary-85: #262626;
+$character-light-secondary-45: #8c8c8c;
+$character-light-disable-25: #bfbfbf;
+$character-light-border: #d9d9d9;
+$character-light-dividers: #f0f0f0;
+$character-light-background: #f5f5f5;
+$character-light-table-header: #fafafa;
+$character-dark-title-85: #dbdbdb;
+$character-dark-primary-85: #dbdbdb;
+$character-dark-secondary-45: #7c7c7c;
+$character-dark-disable-25: #5a5a5a;
+$character-dark-border: #434343;
+$character-dark-dividers: #303030;
+$character-dark-background: #262626;
+$character-dark-table-header: #1c1c1c;
+$main-background-color: $white1;
+$main-text-color: $black1;
+$divider-color: rgba($black1, .14);
+
+// text sezes
+$main-text-size: 14px;
+$main-border-radius: 6px;
+
+// spaces
+$small-space: 16px;
+$medium-space: 32px;
+$large-space: 64px;
+
+// media query
+$phone-size: 600px;
+$tablet-size: 992px;
+$desktop-size: 1200px;

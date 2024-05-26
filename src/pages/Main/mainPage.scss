@@ -1,0 +1,15 @@
+  @use '../../styles/main' as *;
+
+
+  .first-flex{
+    @include flex($direction: column)
+  }
+  
+  @include for-phone {
+
+    .red-class{
+    color: $red1;
+    background-color: $blue1;
+    }
+
+  }
