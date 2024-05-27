@@ -1,7 +1,25 @@
 @import './variables';
 @import './mixins';
 
-*{
+@font-face {
+  font-family: 'EHS';
+  src: url('/public/electronic-highway-sign.TTF');
+}
+
+@font-face {
+  font-family: 'pixel';
+  src: url('/public/LCD5x8HRU.ttf');
+}
+@font-face {
+  font-family: 'zx_spectrum-7';
+  src: url('/public/zx_spectrum-7.ttf');
+}
+@font-face {
+  font-family: 'zx_spectrum-7_bold';
+  src: url('/public/zx_spectrum-7_bold.ttf');
+}
+
+* {
   box-sizing: border-box;
   outline: none;
 }
@@ -19,16 +37,17 @@
   border-radius: 20px;
 }
 
-
-html, body{
+html,
+body {
   height: 100%;
   overflow-x: hidden;
 }
 
-body{ 
+body {
   position: relative;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: $main-text-size;
   color: $main-text-color;
   background-color: $main-background-color;
@@ -42,12 +61,15 @@ h2,
 h3,
 h4,
 h5 {
-margin: 0;
+  margin: 0;
 }
-
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#root {
+  @include flex($direction: column, $align: center);
+  min-height: 99%;
+  padding: 0 10px;
 }

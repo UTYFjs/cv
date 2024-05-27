@@ -1,15 +1,55 @@
-  @use '../../styles/main' as *;
+@use '../../styles/main' as *;
 
+.main {
+  @include flex($direction: column, $align: center);
+  flex-grow: 1;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  width: 80%;
 
-  .first-flex{
-    @include flex($direction: column)
+  .info {
+    margin: $m 0;
+    @include flex($direction: column);
+    gap: $gap;
   }
-  
-  @include for-phone {
-
-    .red-class{
-    color: $red1;
-    background-color: $blue1;
-    }
-
+  .links {
+    @include flex();
+    gap: $gap;
   }
+
+  .hello {
+    font-weight: 700;
+    font-size: 45px;
+  }
+
+  .name {
+    margin-block-end: 0;
+    font-size: 35px;
+  }
+  .speciality {
+    font-size: 20px;
+    margin-block-start: 0;
+  }
+}
+
+.link-download {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.flex-row {
+  @include flex($direction: row);
+  gap: $gap;
+}
+
+.foto {
+  display: block;
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 20px;
+}
+
+@include for-phone {
+}

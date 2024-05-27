@@ -1,11 +1,10 @@
 module.exports = {
   extends: [
+    //'stylelint-config-standard',
     'stylelint-config-standard-scss',
-    'stylelint-config-recess-order',
     'stylelint-config-prettier-scss',
+    //'stylelint-config-prettier',
     'stylelint-config-sass-guidelines',
-    // 'stylelint-config-prettier',
-    //require.resolve('arui-presets-lint/stylelint'),
   ],
   rules: {
     'import-notation': 'string',

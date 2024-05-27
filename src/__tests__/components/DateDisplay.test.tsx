@@ -3,7 +3,7 @@
  */
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import DateDisplay from '../../components/DateDisplay';
+import DateDisplay from '../../components/date-display/DateDisplay';
 
 test('renders current date', () => {
   render(<DateDisplay />);

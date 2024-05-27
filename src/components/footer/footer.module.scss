@@ -1,0 +1,6 @@
+@use '../../styles/main' as *;
+
+.footer {
+  @include flex($direction: column);
+  min-height: 69px;
+}

@@ -1,0 +1,16 @@
+@use '../../styles/main' as *;
+.social {
+  @include flex($justify: center);
+  gap: $gap;
+  margin-bottom: $m;
+}
+
+.social-icon {
+  width: 34px;
+  color: currentColor;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  color: $character-yellow;
+}
