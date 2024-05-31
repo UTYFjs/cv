@@ -18,3 +18,14 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin font-bg-code{
+    display: block;
+    font-family: 'Overpass Mono', monospace;
+    white-space: pre;
+    color: $character-dark-primary-85;
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-left: -2rem;
+}

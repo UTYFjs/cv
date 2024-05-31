@@ -1,16 +1,22 @@
 @use '../../styles/main' as *;
+
 .social {
   @include flex($justify: center);
+
   gap: $gap;
-  margin-bottom: $m;
+  margin-bottom: $m-4xs;
 }
 
 .social-icon {
   width: 34px;
-  color: currentColor;
+  color: currentcolor;
   cursor: pointer;
+  transition: scale 0.6s;
 }
 
 .social-icon:hover {
-  color: $character-yellow;
+  scale: 1.4;
+
+  // color: $character-yellow;
+  color: $palitra2-light;
 }

@@ -2,12 +2,12 @@
 @import './mixins';
 
 @font-face {
-  font-family: 'EHS';
+  font-family: EHS;
   src: url('/public/electronic-highway-sign.TTF');
 }
 
 @font-face {
-  font-family: 'pixel';
+  font-family: pixel;
   src: url('/public/LCD5x8HRU.ttf');
 }
 @font-face {
@@ -70,6 +70,7 @@ code {
 
 #root {
   @include flex($direction: column, $align: center);
+
   min-height: 99%;
   padding: 0 10px;
 }

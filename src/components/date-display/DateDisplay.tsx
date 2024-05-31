@@ -11,15 +11,7 @@ export const DateDisplay = ({ className }: DateDisplayProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setDate(moment().format('HH:mm:ss'));
-      //setDate(moment().toDate().toString());
     }, 1000);
-    //console.log(Geolocation);
-    console.log(navigator.geolocation.getCurrentPosition);
-    // navigator.geolocation.getCurrentPosition(function (location) {
-    //   console.log('location', location.coords.latitude);
-    //   console.log(location.coords.longitude);
-    //   console.log(location.coords.accuracy);
-    // })();
 
     return () => clearInterval(interval);
   }, []);

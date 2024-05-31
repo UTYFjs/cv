@@ -4,10 +4,16 @@
   width: 100%;
   margin: 0 50px;
   min-height: 69px;
-  @include flex($direction: row, $justify: flex-end);
+  @include flex($direction: row, $justify: space-between);
 
-  .date {
-    justify-self: center !important;
-    align-self: center !important;
+  .versions p {
+    color: $character-dark-secondary-45;
+    transition: scale .5s;
+  }
+
+  .versions p:nth-child(2):hover {
+    color: $palitra2-red;
+    scale: 1.1;
+    cursor: pointer;
   }
 }

@@ -1,22 +1,34 @@
 @use '../../styles/main' as *;
 
 .main {
-  @include flex($direction: column, $align: center);
+  @include flex($direction: column);
+
   flex-grow: 1;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
 
   .info {
-    margin: $m 0;
     @include flex($direction: column);
+  }
+
+  .info::before {
+    content: 'const CV = () => (\a \00a0<> \a \00a0 \00a0<h1 className=”cv_name”>';
+    @include font-bg-code;
+  }
+
+  .links {
+    @include flex;
+
     gap: $gap;
   }
-  .links {
-    @include flex();
-    gap: $gap;
+
+  .addition::after {
+    content: '\00a0</h1> \a \00a0<div className="btns">';
+    @include font-bg-code;
+  }
+
+  .info::after {
+    content: '\00a0</ div> \a </> \a)';
+    @include font-bg-code;
   }
 
   .hello {
@@ -27,20 +39,27 @@
   .name {
     margin-block-end: 0;
     font-size: 35px;
+    margin-top: $m-3xs;
   }
+
   .speciality {
     font-size: 20px;
     margin-block-start: 0;
+  }
+
+  .addition {
+    color: $character-dark-secondary-45;
   }
 }
 
 .link-download {
   text-decoration: none;
-  color: currentColor;
+  color: currentcolor;
 }
 
-.flex-row {
+.cv {
   @include flex($direction: row);
+
   gap: $gap;
 }
 
@@ -51,5 +70,51 @@
   border-radius: 20px;
 }
 
+.parallax-bg {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  opacity: 0.5;
+  color: #000;
+  font-size: 1.8rem;
+  border: 1px solid #999;
+  z-index: -1;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    right: 30vw;
+  }
+
+  span:nth-child(2n) {
+    // color: $character-yellow;
+    color: $palitra2-light;
+  }
+}
+
+@include for-tablet {
+  .parallax-bg {
+    opacity: 0.2;
+    font-size: 1.5rem;
+  }
+}
+
 @include for-phone {
+  .cv {
+    @include flex($direction: column-reverse);
+  }
+
+  .foto {
+    display: block;
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 20px;
+    align-self: center;
+  }
+
+  .parallax-bg {
+    font-size: 1.3rem;
+    opacity: 0.08;
+  }
 }

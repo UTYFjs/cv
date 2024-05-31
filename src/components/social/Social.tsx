@@ -1,9 +1,12 @@
+import { CSSProperties } from 'react';
 import { GithubSvg, MailSvg, TelegramSvg } from '../custom-icons/CustomIcons';
 import styles from './Social.module.scss';
-
-export const Social = () => (
+type SocialProps = {
+  style?: CSSProperties;
+};
+export const Social = ({ style }: SocialProps) => (
   <>
-    <div className={styles.social}>
+    <div className={styles.social} style={style}>
       {/* <img className={styles['social-icon']} src={Telegram} /> */}
       <TelegramSvg className={styles['social-icon']} onClick={() => window.open('https://t.me/utyfjs')} />
       <GithubSvg className={styles['social-icon']} onClick={() => window.open('https://github.com/UTYFjs')} />

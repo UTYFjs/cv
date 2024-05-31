@@ -5,7 +5,6 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Social />
-      SUHAKOU HENADZI 2024
     </footer>
   );
 };

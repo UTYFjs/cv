@@ -7,13 +7,14 @@ module.exports = {
     'stylelint-config-sass-guidelines',
   ],
   rules: {
+    'selector-max-id': 2,
     'import-notation': 'string',
     'media-query-no-invalid': null,
     'declaration-no-important': true,
     'no-duplicate-selectors': true,
     'font-weight-notation': 'numeric',
     'comment-empty-line-before': 'always',
-    'rule-empty-line-before': 'always-multi-line',
+    //'rule-empty-line-before': 'always-multi-line',
     'color-no-invalid-hex': [true, { reportDisables: true }],
     'selector-pseudo-class-no-unknown': [
       true,

@@ -21,6 +21,12 @@ $silver1: #ddd;
 $gray1: #aaa;
 $black1: #111;
 
+// my genuli
+$color-myred: #ff4f33;
+$color-myred-light: #ff5252;
+$color-light-l: #e7ebf0;
+$color-burgundy: #682d2d;
+
 // character
 $character-light-title-85: #262626;
 $character-light-primary-85: #262626;
@@ -43,6 +49,27 @@ $main-background-color: $white1;
 $main-text-color: $black1;
 $divider-color: rgba($black1, 0.14);
 
+// palitra1
+$palitra1-middle: #875224;
+
+
+// palitra2
+// $palitra2-middle: #00d7ff;
+$palitra2-middle: #904022;
+$palitra2-middle: #9d0208;
+$palitra2-middle: #1f1f1f;
+
+// $palitra2-middle: #682d2d;
+// $palitra2-middle: #1559e4;
+// $palitra2-middle: #29b1bb;
+// $palitra2-middle: #093726;
+// $palitra2-middle: #175800;
+// $palitra2-light: #e4a015;
+$palitra2-light: #fca70d;
+$palitra2-red: #fc570d;
+
+// $palitra2-light: #753a00;
+
 // text sizes
 $main-text-size: 14px;
 $main-border-radius: 6px;
@@ -54,7 +81,7 @@ $pixel-numbers: 'EHS';
 // gaps
 $gap-5xs: 2px;
 $gap-4xs: 4px;
-$gap-3_4xs: 5px;
+$gap-3-4xs: 5px;
 $gap-3xs: 6px;
 $gap-2xs: 8px;
 $gap-xs: 10px;
@@ -81,7 +108,7 @@ $gap-14xl: 48px;
 // margin
 $m-5xs: 2px;
 $m-4xs: 4px;
-$m-3_4xs: 5px;
+$m-3-4xs: 5px;
 $m-3xs: 6px;
 $m-2xs: 8px;
 $m-xs: 10px;
