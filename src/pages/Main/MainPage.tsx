@@ -124,7 +124,7 @@ export const MainPage = () => {
             <animated.img
               ref={fotoRef}
               className="foto"
-              src="./public/image/My-foto-square.webp"
+              src="./image/My-foto-square.webp"
               alt="my-foto"
               width="300"
               height="300"
