@@ -1,15 +1,136 @@
-  @use '../../styles/main' as *;
+@use '../../styles/main' as *;
 
+.main {
+  @include flex($direction: column);
 
-  .first-flex{
-    @include flex($direction: column)
+  margin-top: $m-5xl;
+  flex-grow: 1;
+  width: 90%;
+
+  .info {
+    @include flex($direction: column);
   }
-  
-  @include for-phone {
 
-    .red-class{
-    color: $red1;
-    background-color: $blue1;
+  .info::before {
+    content: 'const CV = () => (\a \00a0<> \a \00a0 \00a0<h1 className=”cv_name”>';
+    @include font-bg-code;
+  }
+
+  .links {
+    @include flex;
+
+    gap: $gap;
+  }
+
+  .addition::after {
+    content: '\00a0</h1> \a \00a0<div className="btns">';
+    @include font-bg-code;
+  }
+
+  .info::after {
+    content: '\00a0</ div> \a </> \a)';
+    @include font-bg-code;
+  }
+
+  .hello {
+    font-weight: 700;
+    font-size: 45px;
+  }
+
+  .name {
+    margin-block-end: 0;
+    font-size: 35px;
+    margin-top: $m-3xs;
+  }
+
+  .speciality {
+    font-size: 20px;
+    margin-block-start: 0;
+  }
+}
+
+.link-download {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+.cv {
+  @include flex($direction: row);
+
+  gap: $gap;
+}
+
+.foto {
+  display: block;
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  opacity: 0.5;
+  color: #000;
+  font-size: 1.8rem;
+  border: 1px solid #999;
+  z-index: 0;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    right: 30vw;
+  }
+
+  span:nth-child(2n) {
+    // color: $character-yellow;
+    color: $palitra2-light;
+  }
+}
+
+@include for-tablet {
+  .parallax-bg {
+    opacity: 0.2;
+    font-size: 1.5rem;
+  }
+}
+
+@include for-phone {
+  .cv {
+    @include flex($direction: column-reverse);
+  }
+
+  .main {
+    width: 85%;
+
+    .name {
+      font-size: 25px;
     }
 
+    .speciality {
+      font-size: 15px;
+    }
+
+    .addition {
+      font-size: 12px;
+      margin-top: $m-3xs;
+    }
+
+    .foto {
+      display: block;
+      max-width: 180px;
+      max-height: 180px;
+      border-radius: 20px;
+      align-self: center;
+    }
   }
+
+  .parallax-bg {
+    display: none;
+    font-size: 1.3rem;
+    opacity: 0.08;
+  }
+}

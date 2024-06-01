@@ -1,0 +1,47 @@
+@use '../../styles/main' as *;
+
+.date-display {
+  @include flex($direction: column, $align: center, $justify: center);
+
+  min-width: 180px;
+  font-family: $pixel-numbers;
+  color: $palitra2-light;
+}
+
+.day-of-week {
+  font-family: $pixel-text;
+  font-size: 15px;
+
+  // padding: 0 $p-14xl;
+}
+
+.time {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@include for-phone {
+  .date-display {
+    @include flex($direction: column, $align: center, $justify: start);
+
+    min-width: 60px;
+  }
+
+  .day-of-week {
+    font-size: 9px;
+    font-weight: 400;
+  }
+
+  .time {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,20 @@
+@use '../../styles/main' as *;
+
+.social {
+  @include flex($justify: center);
+
+  gap: $gap;
+  margin-bottom: $m-4xs;
+}
+
+.social-icon {
+  width: 34px;
+  color: currentcolor;
+  cursor: pointer;
+  transition: scale 0.6s;
+}
+
+.social-icon:hover {
+  scale: 1.4;
+  color: $palitra2-light;
+}

@@ -1,0 +1,63 @@
+@use '../../styles/main.scss' as *;
+
+.btn {
+  width: fit-content;
+  border: 0 solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 100%;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    $palitra2-middle 0%,
+    $palitra2-middle 50%,
+    $palitra2-light 50%,
+    $palitra2-light 100%
+  );
+  background-size: 200%;
+  background-position-x: 100%;
+  transition: all 0.9s;
+}
+
+.btn.reverse {
+  background: linear-gradient(
+    90deg,
+    $palitra2-light 0%,
+    $palitra2-light 50%,
+    $palitra2-middle 50%,
+    $palitra2-middle 100%
+  );
+  background-size: 200%;
+  background-position-x: 100%;
+}
+
+.btn:hover,
+.reverse:hover {
+  background-position-x: 0%;
+}
+
+.btn:active {
+  background: $color-burgundy;
+}
+
+.primary {
+  cursor: pointer;
+}
+
+.secondary {
+  cursor: pointer;
+}
+
+.small {
+  height: 19px;
+}
+
+.medium {
+  height: 28px;
+}
+
+.large {
+  height: 39px;
+}

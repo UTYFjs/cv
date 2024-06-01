@@ -1,11 +1,14 @@
 {
   "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.stylelintIntegration": true,
   "prettier.eslintIntegration": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit", //not working why
     "source.fixAll.eslint": "explicit",
     "stylelint.useLocal": "explicit",
     "stylelint.autoFixOnSave": "explicit",

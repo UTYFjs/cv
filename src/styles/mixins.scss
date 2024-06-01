@@ -9,17 +9,24 @@
 @mixin for-phone {
   @media (max-width: $phone-size) {
     @content;
-
-
-
   }
 }
 
 @mixin flex($direction: row, $justify: start, $align: stretch) {
-    display: flex;
-    flex-direction: $direction;
-align-items: $align;
-    justify-content: $justify;
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
 
-
+@mixin font-bg-code {
+  display: block;
+  font-family: 'Overpass Mono', monospace;
+  white-space: pre;
+  color: $character-dark-title-85;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-shadow: 0 0 10px $white1;
+  line-height: 1.5rem;
+  margin-left: -2rem;
 }

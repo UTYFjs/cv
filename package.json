@@ -11,7 +11,7 @@
         "yarn": ">=1.22.21"
     },
     "scripts": {
-        "start": "vite --port 3000 --open",
+        "start": "vite --port 3000 --open --host",
         "dev": "vite --port 3000 --open",
         "build": "vite build",
         "serve": "vite preview --open",
@@ -25,6 +25,7 @@
         "stylelint-scss-check": "stylelint-config-prettier-scss-check"
     },
     "dependencies": {
+        "@react-spring/web": "^9.7.3",
         "@reduxjs/toolkit": "^2.2.5",
         "@testing-library/jest-dom": "^6.4.5",
         "@testing-library/react": "^15.0.7",
@@ -32,6 +33,7 @@
         "axios": "^1.7.2",
         "classnames": "^2.5.1",
         "eslint-plugin-prettier": "^5.1.3",
+        "leva": "^0.9.35",
         "moment": "^2.30.1",
         "normalize.css": "^8.0.1",
         "react": "^18.3.1",
@@ -78,7 +80,6 @@
         "stylelint": "^16.6.0",
         "stylelint-config-prettier": "^9.0.5",
         "stylelint-config-prettier-scss": "^1.0.0",
-        "stylelint-config-recess-order": "^5.0.1",
         "stylelint-config-sass-guidelines": "^11.1.0",
         "stylelint-config-standard-scss": "^13.1.0",
         "stylelint-prettier": "^5.0.0",
