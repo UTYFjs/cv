@@ -71,6 +71,7 @@ code {
 #root {
   @include flex($direction: column, $align: center);
 
+  background: linear-gradient(90deg, $white1 0%, $palitra2-middle 100%);
   min-height: 99%;
   padding: 0 10px;
 }

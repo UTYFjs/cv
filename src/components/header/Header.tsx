@@ -1,4 +1,5 @@
 import { DateDisplay } from '../date-display/DateDisplay';
+//import { Menu } from '../menu/Menu';
 import styles from './header.module.scss';
 
 export const Header = () => {
@@ -8,7 +9,7 @@ export const Header = () => {
         <p>V0.1</p>
         {/* <p>previous versions</p> */}
       </div>
-
+      {/* <Menu /> */}
       <DateDisplay className={styles.date} />
     </header>
   );

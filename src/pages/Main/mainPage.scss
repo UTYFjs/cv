@@ -3,6 +3,7 @@
 .main {
   @include flex($direction: column);
 
+  margin-top: $m-5xl;
   flex-grow: 1;
   width: 90%;
 
@@ -46,10 +47,6 @@
     font-size: 20px;
     margin-block-start: 0;
   }
-
-  .addition {
-    color: $character-dark-secondary-45;
-  }
 }
 
 .link-download {
@@ -68,6 +65,7 @@
   max-width: 220px;
   max-height: 220px;
   border-radius: 20px;
+  z-index: 1;
 }
 
 .parallax-bg {
@@ -78,7 +76,7 @@
   color: #000;
   font-size: 1.8rem;
   border: 1px solid #999;
-  z-index: -1;
+  z-index: 0;
 
   span {
     display: block;
@@ -105,15 +103,33 @@
     @include flex($direction: column-reverse);
   }
 
-  .foto {
-    display: block;
-    max-width: 180px;
-    max-height: 180px;
-    border-radius: 20px;
-    align-self: center;
+  .main {
+    width: 85%;
+
+    .name {
+      font-size: 25px;
+    }
+
+    .speciality {
+      font-size: 15px;
+    }
+
+    .addition {
+      font-size: 12px;
+      margin-top: $m-3xs;
+    }
+
+    .foto {
+      display: block;
+      max-width: 180px;
+      max-height: 180px;
+      border-radius: 20px;
+      align-self: center;
+    }
   }
 
   .parallax-bg {
+    display: none;
     font-size: 1.3rem;
     opacity: 0.08;
   }
