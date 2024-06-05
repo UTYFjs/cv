@@ -101,8 +101,8 @@ export const MainPage = () => {
                 reverseBg={true}
                 onClick={() => {
                   const anchor = document.createElement('a');
-                  anchor.href = 'CV_Suhakou_Henadzi_Frontend_05.2024_RU.pdf';
-                  anchor.download = 'CV_Suhakou_Henadzi_Frontend_05.2024_RU.pdf';
+                  anchor.href = 'CV_Suhakou_Henadzi_Frontend_06.2024_RU.pdf';
+                  anchor.download = 'CV_Suhakou_Henadzi_Frontend_06.2024_RU.pdf';
                   document.body.appendChild(anchor);
                   anchor.click();
                   document.body.removeChild(anchor);
@@ -112,7 +112,7 @@ export const MainPage = () => {
               </Button>
               <Button
                 onClick={() =>
-                  window.open('https://drive.google.com/file/d/1f69ssc5raMnJPZ1NW4Iul66N7JAbEcW8/view?usp=sharing')
+                  window.open('https://drive.google.com/file/d/1_0O2-lWQh5hvcNMIYrmsEpIKdyiGw5Ji/view?usp=drive_link')
                 }
               >
                 Открыть СV
