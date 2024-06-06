@@ -20,6 +20,10 @@
 .menu_link {
   text-decoration: none;
 }
+.menu_link.active {
+  font-weight: 600;
+  border: solid 4px green;
+}
 .item_text {
   color: $character-dark-table-header;
   //z-index: 5;
@@ -39,6 +43,7 @@
   font-weight: 400;
   color: #fff; /* Цвет текста */
   border-radius: 12px;
+  margin-top: 12px;
   padding: 0.5em; /* Поля вокруг текста */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
   pointer-events: none; /* Подсказка */
@@ -77,6 +82,9 @@
 }
 .menu_item :hover + .bg1 {
   transform: rotate(0deg);
+}
+.menu_item.active + .bg1 {
+  transform: rotate(0deg)!important;
 }
 
 @include for-phone {

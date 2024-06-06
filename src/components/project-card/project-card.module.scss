@@ -1,5 +1,37 @@
 @use '../../styles/main.scss' as *;
 
+.project-card {
+  @include flex($direction: column, $align: center);
+  position: relative;
+  gap: $gap;
+  width: 25%;
+  max-width: 315px;
+  overflow: hidden;
+}
+.img-wrapper {
+  position: relative;
+}
+.img {
+  width: 100%;
+  border-radius: 6px;
+}
+.img:hover + .project-card_description,
+.project-card_description:hover {
+  right: 0;
+}
+.project-card_description {
+  position: absolute;
+  top: 10%;
+  right: -100%;
+  width: 90%;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 15px 0 0 15px;
+  background: #00000097;
+  color: $character-light-table-header;
+  transition: all 0.6s ease-in;
+}
+
 .btns {
   @include flex();
   gap: $gap;

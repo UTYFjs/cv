@@ -81,7 +81,7 @@ export const MainPage = () => {
   };
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main
         className="main"
         onMouseMove={(e) => {

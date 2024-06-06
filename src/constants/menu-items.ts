@@ -1,5 +1,10 @@
 export const MENUITEMS = [
   {
+    text: 'Main',
+    route: '/',
+    tooltip: '',
+  },
+  {
     text: 'Skills',
     route: '',
     tooltip: 'Раздел находится в разработке',
