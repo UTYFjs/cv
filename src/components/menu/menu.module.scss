@@ -1,0 +1,86 @@
+@use '../../styles/main.scss' as *;
+.menu {
+  @include flex();
+  gap: $gap;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.menu_item {
+  text-decoration: none;
+  z-index: 1;
+  position: relative;
+  width: fit-content;
+  padding: $p-4xs $p-xl;
+  cursor: pointer;
+  background: rgba($color: #000000, $alpha: 0.5);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.menu_link {
+  text-decoration: none;
+}
+.item_text {
+  color: $character-dark-table-header;
+  //z-index: 5;
+}
+
+[data-tooltip] {
+  position: relative; /* Относительное позиционирование */
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 170px; /* Ширина подсказки */
+  right: 0;
+  top: 0; /* Положение подсказки */
+  background: #292929; /* Синий цвет фона */
+  font-size: 11px;
+  font-weight: 400;
+  color: #fff; /* Цвет текста */
+  border-radius: 12px;
+  padding: 0.5em; /* Поля вокруг текста */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0;
+  transition: 1s;
+}
+[data-tooltip]:hover::after {
+  opacity: 0.9;
+  top: 2.2em;
+}
+
+.bg1,
+.bg2,
+.bg1__indevelop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.bg1 {
+  background: $palitra2-light;
+  transform: rotate(-10deg);
+}
+.bg1__indevelop {
+  background: $character-dark-secondary-45;
+  transform: rotate(-10deg);
+}
+
+.menu_item:hover {
+}
+.menu_item :hover + .bg1 {
+  transform: rotate(0deg);
+}
+
+@include for-phone {
+  .menu {
+    gap: $gap-xs;
+  }
+}
