@@ -1,6 +1,8 @@
 @use '../../styles/main.scss' as *;
+
 .menu {
-  @include flex();
+  @include flex;
+
   gap: $gap;
   list-style: none;
   padding-inline-start: 0;
@@ -13,25 +15,28 @@
   width: fit-content;
   padding: $p-4xs $p-xl;
   cursor: pointer;
-  background: rgba($color: #000000, $alpha: 0.5);
+  background: rgba($color: #000, $alpha: 50%);
   border-radius: 5px;
   transition: all 0.5s;
 }
+
 .menu_link {
   text-decoration: none;
 }
+
+//todo
 .menu_link.active {
   font-weight: 600;
-  border: solid 4px green;
 }
+
 .item_text {
   color: $character-dark-table-header;
-  //z-index: 5;
 }
 
 [data-tooltip] {
   position: relative; /* Относительное позиционирование */
 }
+
 [data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -45,11 +50,12 @@
   border-radius: 12px;
   margin-top: 12px;
   padding: 0.5em; /* Поля вокруг текста */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 30%); /* Параметры тени */
   pointer-events: none; /* Подсказка */
   opacity: 0;
   transition: 1s;
 }
+
 [data-tooltip]:hover::after {
   opacity: 0.9;
   top: 2.2em;
@@ -73,6 +79,7 @@
   background: $palitra2-light;
   transform: rotate(-10deg);
 }
+
 .bg1__indevelop {
   background: $character-dark-secondary-45;
   transform: rotate(-10deg);
@@ -80,11 +87,13 @@
 
 .menu_item:hover {
 }
+
 .menu_item :hover + .bg1 {
   transform: rotate(0deg);
 }
+
 .menu_item.active + .bg1 {
-  transform: rotate(0deg)!important;
+  transform: rotate(0deg) !important;
 }
 
 @include for-phone {

@@ -4,24 +4,28 @@
   @include flex($justify: space-around);
   gap: $gap-14xl;
   max-width: 1600px;
-  // overflow: hidden;
   height: 100%;
 }
+
 .projects_react,
 .projects_js,
 .projects_nodejs {
   max-height: calc(100vh - 220px);
   overflow-y: auto;
 }
+
 .projects_react {
   overflow: hidden;
+
   .card {
     //position:relative;
     transform: translateY(110vh);
     opacity: 0;
     transition: all 0.9s ease-in-out;
+
     //transition: opacity .8s ease-in-out;
   }
+
   .card.show {
     margin-top: 8%;
     opacity: 1;
@@ -31,11 +35,13 @@
   .card:nth-of-type(even) {
     transform: translateY(-110vh);
   }
+
   .card:nth-of-type(even).show {
     margin-top: 0;
     transform: translateY(0);
   }
 }
+
 .projects_js {
   // @include flex();
   display: grid;
@@ -48,8 +54,10 @@
 
 .projects_nodejs {
   @include flex($direction: column);
+
   gap: $gap-14xl;
   max-width: 1600px;
+
   // overflow: hidden;
   // height: 100%;
 }

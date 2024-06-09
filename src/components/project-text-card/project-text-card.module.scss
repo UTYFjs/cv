@@ -1,7 +1,8 @@
 @use '../../styles//main.scss' as *;
 
 .project-text-card {
-  @include flex();
+  @include flex;
+
   max-height: 300px;
   min-height: 150px;
 }
@@ -18,6 +19,7 @@
 
 .description-wrapper {
   @include flex($direction: column, $justify: space-between);
+
   flex-basis: 70%;
   color: $character-dark-primary-85;
 

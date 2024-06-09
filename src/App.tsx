@@ -13,6 +13,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 import { ProjectsPage } from './pages/Projects/Projects';
 import { LayoutMain } from './pages/layout-main/layout-main';
+import { PreviousVersions } from './pages/previous-versions/previous-versions';
 
 const App: React.FC = () => {
   moment.locale('ru', {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
               <Route path="*" element={<NotFoundPage />} />
               <Route path={ROUTES.HOMEPAGE_ROUTE} element={<MainPage />} />
               <Route path={ROUTES.PROJECTS} element={<ProjectsPage />} />
+              <Route path={ROUTES.PREVIOUS_VERSIONS} element={<PreviousVersions />} />
             </Route>
           </Routes>
         </BrowserRouter>
