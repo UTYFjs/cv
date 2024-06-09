@@ -2,9 +2,9 @@ import { ProjectDataType } from '~/constants/projects-constants';
 import { Button } from '../button/Button';
 import styles from './project-card.module.scss';
 import cn from 'classnames';
+import React, { ReactNode } from 'react';
 
 type ProjectCardProps = Omit<ProjectDataType, 'id'> & {
-  size: 'small' | 'medium' | 'large';
   className?: string;
 };
 
@@ -16,7 +16,6 @@ export const ProjectCard = ({
   linkDeploy,
   linkCode,
   stack,
-  size,
   className,
 }: ProjectCardProps) => {
   const containerClassNames = cn(styles['project-card'], className);

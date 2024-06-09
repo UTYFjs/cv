@@ -6,7 +6,7 @@ type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButton
   style?: CSSProperties;
   typeBtn?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
-  classNames?: string;
+  className?: string;
   children?: ReactNode;
   reverseBg?: boolean;
   onClick?: () => void;
@@ -16,14 +16,14 @@ export const Button = ({
   style,
   size = 'medium',
   typeBtn = 'primary',
-  classNames,
+  className,
   children,
   reverseBg = false,
   onClick,
 }: ButtonProps) => {
   return (
     <button
-      className={cn(styles.btn, styles[typeBtn], styles[size], classNames, reverseBg && styles.reverse)}
+      className={cn(styles.btn, styles[typeBtn], styles[size], className, reverseBg && styles.reverse)}
       style={style}
       type="button"
       onClick={onClick}

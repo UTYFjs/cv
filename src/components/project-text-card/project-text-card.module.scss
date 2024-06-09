@@ -1,0 +1,28 @@
+@use '../../styles//main.scss' as *;
+
+.project-text-card {
+  @include flex();
+  max-height: 300px;
+  min-height: 150px;
+}
+
+.title-wrapper {
+  @include flex($direction: column);
+
+  flex-basis: 30%;
+
+  .stack {
+    margin-top: 1rem;
+  }
+}
+
+.description-wrapper {
+  @include flex($direction: column, $justify: space-between);
+  flex-basis: 70%;
+  color: $character-dark-primary-85;
+
+  .btn {
+    align-self: flex-end;
+    margin-right: 100px;
+  }
+}

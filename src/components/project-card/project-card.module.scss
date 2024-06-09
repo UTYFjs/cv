@@ -4,9 +4,10 @@
   @include flex($direction: column, $align: center);
   position: relative;
   gap: $gap;
-  width: 25%;
+  //width: 25%;
   max-width: 315px;
   overflow: hidden;
+  color: $character-light-table-header;
 }
 .img-wrapper {
   position: relative;
