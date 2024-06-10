@@ -11,7 +11,7 @@
 .projects_js,
 .projects_nodejs {
   max-height: calc(100vh - 220px);
-  overflow-y: auto;
+  //overflow-y: auto;
 }
 
 .projects_react {
@@ -55,9 +55,9 @@
 .projects_nodejs {
   @include flex($direction: column);
 
-  gap: $gap-14xl;
+  gap: $gap-s;
   max-width: 1600px;
 
-  // overflow: hidden;
+  overflow-y: auto;
   // height: 100%;
 }

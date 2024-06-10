@@ -14,6 +14,7 @@ export const ProjectCard = ({
   description,
   linkDeploy,
   linkCode,
+  sprints,
   stack,
   className,
 }: ProjectCardProps) => {
@@ -25,7 +26,13 @@ export const ProjectCard = ({
       <div className={styles['img-wrapper']}>
         {' '}
         <img className={styles.img} src={src} alt="image-superboards"></img>
-        {description && <div className={styles['project-card_description']}> {description}</div>}
+        {description && (
+          <div className={styles['project-card_description']}>
+            {' '}
+            <p>{description}</p>
+            {sprints && sprints.map((sprint, index) => <div>Sprint {index + 1}:</div>)}
+          </div>
+        )}
       </div>
       <div className={styles.stack}> [ {stack.map((item) => item + ', ')} ]</div>
       <div className={styles.btns}>

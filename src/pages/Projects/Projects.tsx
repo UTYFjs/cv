@@ -25,7 +25,7 @@ export const ProjectsPage = () => {
             content: (
               <div className={styles['projects_react']}>
                 {PROJECT_REACT_DATA.map(
-                  ({ id, title, src, shortDescription, description, linkDeploy, linkCode, stack }) => (
+                  ({ id, title, src, shortDescription, description, sprints, linkDeploy, linkCode, stack }) => (
                     <ProjectCard
                       key={id}
                       className={cardClassnames}
@@ -33,6 +33,7 @@ export const ProjectsPage = () => {
                       src={src}
                       shortDescription={shortDescription}
                       description={description}
+                      sprints={sprints}
                       linkDeploy={linkDeploy}
                       linkCode={linkCode}
                       stack={stack}
@@ -58,7 +59,6 @@ export const ProjectsPage = () => {
                       linkDeploy={linkDeploy}
                       linkCode={linkCode}
                       stack={stack}
-                      id={''}
                     />
                   )
                 )}
@@ -70,7 +70,18 @@ export const ProjectsPage = () => {
             content: (
               <div className={styles['projects_nodejs']}>
                 {PROJECT_NODEJS_DATA.map(
-                  ({ id, title, src, shortDescription, description, linkDeploy, linkCode, stack }) => (
+                  ({
+                    id,
+                    title,
+                    src,
+                    shortDescription,
+                    description,
+                    linkDeploy,
+                    sprints,
+                    features,
+                    linkCode,
+                    stack,
+                  }) => (
                     <ProjectTextCard
                       key={id}
                       className={cardClassnames}
@@ -78,6 +89,8 @@ export const ProjectsPage = () => {
                       src={src}
                       shortDescription={shortDescription}
                       description={description}
+                      sprints={sprints}
+                      features={features}
                       linkDeploy={linkDeploy}
                       linkCode={linkCode}
                       stack={stack}
