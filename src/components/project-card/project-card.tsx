@@ -2,6 +2,11 @@ import { ProjectDataType } from '~/constants/projects-constants';
 import { Button } from '../button/Button';
 import styles from './project-card.module.scss';
 import cn from 'classnames';
+import { Modal } from '../modal/modal';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Tabs } from '../tabs/tabs';
+import { ProjectSprint } from './project-sprint/project-sprint';
 
 type ProjectCardProps = Omit<ProjectDataType, 'id'> & {
   className?: string;
@@ -18,7 +23,14 @@ export const ProjectCard = ({
   stack,
   className,
 }: ProjectCardProps) => {
+  const [isModal, setIsModal] = useState(false);
   const containerClassNames = cn(styles['project-card'], className);
+  const handleOpenModal = () => {
+    setIsModal(true);
+  };
+  const onCloseModal = () => {
+    setIsModal(false);
+  };
   return (
     <div className={containerClassNames}>
       <h2>[{title}]</h2>
@@ -30,7 +42,11 @@ export const ProjectCard = ({
           <div className={styles['project-card_description']}>
             {' '}
             <p>{description}</p>
-            {sprints && sprints.map((sprint, index) => <div>Sprint {index + 1}:</div>)}
+            {sprints && (
+              <Button className={styles['btn_sprints']} size="small" onClick={handleOpenModal}>
+                Подробнее
+              </Button>
+            )}
           </div>
         )}
       </div>
@@ -42,6 +58,24 @@ export const ProjectCard = ({
           Code{' '}
         </Button>
       </div>
+      {isModal &&
+        sprints &&
+        createPortal(
+          <Modal
+            isActive={isModal}
+            body={
+              <Tabs
+                tabs={sprints.map((sprint, index) => ({
+                  label: `Sprint ${index + 1}`,
+                  content: <ProjectSprint sprint={sprint} />,
+                }))}
+              ></Tabs>
+            }
+            contentStyles={{ width: '80%', height: '80%' }}
+            onClose={onCloseModal}
+          />,
+          document.body
+        )}
     </div>
   );
 };

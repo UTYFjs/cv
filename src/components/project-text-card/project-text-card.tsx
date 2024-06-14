@@ -36,7 +36,7 @@ export const ProjectTextCard = ({
                 {sprint.features && (
                   <ul className={styles.list}>
                     {sprint.features.map((item) => (
-                      <li key={nanoid()}>{item}</li>
+                      <li key={nanoid()}>{item.text}</li>
                     ))}
                   </ul>
                 )}

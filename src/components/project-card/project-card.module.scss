@@ -36,7 +36,10 @@
   color: $character-light-table-header;
   transition: all 0.6s ease-in;
 }
-
+.btn_sprints {
+  margin: 0 auto;
+  margin-top: $m;
+}
 .btns {
   @include flex;
 

@@ -24,7 +24,7 @@ export const PreviousVersions = () => (
         {' '}
         <p className={styles['version_title']}>V0.2</p>{' '}
         <div className={styles['version_description']}>
-          <p className={styles['version_name']}> Project page</p>
+          <p className={styles['version_name']}> Project page (Desktop)</p>
           <ul className={styles.list}>
             <li>Определение основных разделов проекта</li>
             <li>Главное меню</li>

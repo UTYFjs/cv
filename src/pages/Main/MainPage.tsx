@@ -108,14 +108,14 @@ export const MainPage = () => {
                   document.body.removeChild(anchor);
                 }}
               >
-                Скачать
+                Скачать PDF
               </Button>
               <Button
                 onClick={() =>
                   window.open('https://drive.google.com/file/d/1_0O2-lWQh5hvcNMIYrmsEpIKdyiGw5Ji/view?usp=drive_link')
                 }
               >
-                Открыть СV
+                Открыть СV PDF
               </Button>
             </div>
           </div>
