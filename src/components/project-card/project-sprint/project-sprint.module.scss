@@ -1,0 +1,87 @@
+@use './../../../styles/main.scss' as *;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: $m;
+  font-size: 20px;
+  font-weight: 600;
+  color: $character-light-background;
+}
+
+.project_sprint {
+  @include flex($justify: space-between);
+
+  gap: $gap;
+}
+
+.features-list {
+  flex-basis: 40%;
+}
+
+.feature {
+  position: relative;
+  left: 0;
+  color: #fce4ec;
+  list-style: none;
+  cursor: pointer;
+  margin: $m-xs 0;
+  transition: left 0.5s;
+}
+
+.feature:hover {
+  cursor: pointer;
+  left: 15px;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  background: center/contain no-repeat url('./svg/star.svg');
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  left: 100%;
+  transition: left 1s cubic-bezier(0.09, 2.57, 0.1, -0.26);
+  transform-origin: center center;
+  animation: 2s linear 0s infinite spin;
+}
+
+.feature:hover::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: -25px;
+}
+
+.active {
+  left: 15px;
+  color: $palitra2-light;
+  transition: left 0.5s;
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -25px;
+  background: center/contain no-repeat url('./svg/star.svg');
+}
+
+.img {
+  flex-basis: 50%;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}

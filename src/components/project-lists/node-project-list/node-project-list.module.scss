@@ -1,0 +1,10 @@
+@use '../../../styles/main.scss' as *;
+
+.projects_nodejs {
+  @include flex($direction: column);
+
+  gap: $gap-s;
+  max-width: 1600px;
+  overflow: hidden auto;
+  max-height: calc(100vh - 220px);
+}

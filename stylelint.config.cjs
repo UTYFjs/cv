@@ -11,6 +11,7 @@ module.exports = {
     'import-notation': 'string',
     'media-query-no-invalid': null,
     'declaration-no-important': true,
+    'selector-class-pattern': null,
     'no-duplicate-selectors': true,
     'font-weight-notation': 'numeric',
     'comment-empty-line-before': 'always',

@@ -1,0 +1,92 @@
+@use './../../styles/main.scss' as *;
+
+.previous {
+  @include flex($direction: column);
+
+  gap: $gap;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.version {
+  @include flex($direction: column);
+}
+
+.version-content {
+  @include flex;
+
+  gap: $gap-xl;
+}
+
+.version::before {
+  content: 'git merge main \a git push';
+  @include font-bg-code;
+}
+
+.version:first-child::before {
+  content: 'git init \a git add . \a git commit -m "init: cv project"';
+  @include font-bg-code;
+}
+
+
+
+.version:last-child::after {
+  content: 'to be continued...';
+  @include font-bg-code;
+
+  margin-top: $m-4xl;
+}
+
+.version:last-child .version_title::after {
+  content: 'Current';
+  @include font-bg-current;
+}
+
+.version_title {
+  flex-basis: 150px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: $m-4xl;
+}
+
+.version_description {
+  flex-basis: 75%;
+}
+
+.version_name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  margin-block: 0.3em 0.3em;
+  padding-left: 1.2rem;
+}
+
+.list li {
+  position: relative;
+}
+
+.list li::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: -1.2em;
+  width: 8px;
+  height: 3px;
+  border-left: 2px solid $palitra2-light;
+  border-bottom: 2px solid $palitra2-light;
+  transform: rotate(-45deg);
+}
+
+.link {
+  color: currentcolor;
+  padding: $p;
+  margin-top: $m;
+}
+
+.link:hover {
+  color: $palitra2-light;
+}

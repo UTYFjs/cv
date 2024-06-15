@@ -30,3 +30,15 @@
   line-height: 1.5rem;
   margin-left: -2rem;
 }
+
+@mixin font-bg-current {
+  display: block;
+  font-family: 'Overpass Mono', monospace;
+  white-space: pre;
+  color: $color-myred;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  // text-shadow: 0 0 10px $white1;
+  line-height: 1.5rem;
+}

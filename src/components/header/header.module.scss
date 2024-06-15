@@ -6,15 +6,10 @@
   min-height: 69px;
   @include flex($direction: row, $justify: space-between);
 
-  .versions p {
+  .versions,
+  .link {
     color: $character-dark-secondary-45;
     transition: scale 0.5s;
-  }
-
-  .versions p:nth-child(2):hover {
-    color: $palitra2-red;
-    scale: 1.1;
-    cursor: pointer;
   }
 }
 

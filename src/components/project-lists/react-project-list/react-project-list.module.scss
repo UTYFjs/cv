@@ -1,0 +1,32 @@
+@use '../../../styles/main.scss' as *;
+
+.projects_react {
+  @include flex($justify: space-around);
+
+  gap: $gap-14xl;
+  max-width: 1600px;
+  max-height: calc(100vh - 220px);
+  height: 100%;
+  overflow: hidden;
+
+  .card {
+    transform: translateY(110vh);
+    opacity: 0;
+    transition: all 0.9s ease-in-out;
+  }
+
+  .card.show {
+    margin-top: 8%;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card:nth-of-type(even) {
+    transform: translateY(-110vh);
+  }
+
+  .card:nth-of-type(even).show {
+    margin-top: 0;
+    transform: translateY(0);
+  }
+}

@@ -5,12 +5,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { MainPage } from './pages/Main/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
-import { ROUTES } from './resources/routes-constants';
+import { ROUTES } from './constants/routes-constants';
 import 'normalize.css';
 import './styles/main.scss';
 import { persistor, store } from './store/store';
 import moment from 'moment';
 import 'moment/locale/ru';
+import { ProjectsPage } from './pages/Projects/Projects';
+import { LayoutMain } from './pages/layout-main/layout-main';
+import { PreviousVersions } from './pages/previous-versions/previous-versions';
 
 const App: React.FC = () => {
   moment.locale('ru', {
@@ -21,8 +24,12 @@ const App: React.FC = () => {
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route path="*" element={<NotFoundPage />} />
-            <Route path={ROUTES.HOMEPAGE_ROUTE} element={<MainPage />} />
+            <Route path="/" element={<LayoutMain />}>
+              <Route path="*" element={<NotFoundPage />} />
+              <Route path={ROUTES.HOMEPAGE_ROUTE} element={<MainPage />} />
+              <Route path={ROUTES.PROJECTS} element={<ProjectsPage />} />
+              <Route path={ROUTES.PREVIOUS_VERSIONS} element={<PreviousVersions />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </PersistGate>
