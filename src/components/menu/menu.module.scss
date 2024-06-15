@@ -1,5 +1,17 @@
 @use '../../styles/main.scss' as *;
 
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .menu {
   @include flex;
 
@@ -24,9 +36,14 @@
   text-decoration: none;
 }
 
-//todo
 .menu_link.active {
-  font-weight: 600;
+  .item_text {
+    font-weight: 900;
+  }
+  .bg1 {
+    transform: rotate(0deg);
+    animation: 2s linear 0s infinite pulse;
+  }
 }
 
 .item_text {
@@ -43,7 +60,7 @@
   width: 170px; /* Ширина подсказки */
   right: 0;
   top: 0; /* Положение подсказки */
-  background: #292929; /* Синий цвет фона */
+  background: #292929; /* цвет фона */
   font-size: 11px;
   font-weight: 400;
   color: #fff; /* Цвет текста */

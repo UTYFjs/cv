@@ -20,8 +20,6 @@
 .project_sprint {
   @include flex($justify: space-between);
   gap: $gap;
-  // min-width: 100%;
-  // height: auto;
 }
 
 .features-list {
@@ -52,7 +50,6 @@
   transition: left 1s cubic-bezier(0.09, 2.57, 0.1, -0.26);
   transform-origin: center center;
   animation: 2s linear 0s infinite spin;
-  //transition: left 4.5s cubic-bezier(0.09, 2.39, 0.1, -0.26);
 }
 .feature:hover:before {
   content: '';
@@ -80,6 +77,5 @@
   max-width: 50%;
   height: auto;
   object-fit: contain;
-
   border-radius: 20px;
 }

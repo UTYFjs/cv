@@ -12,7 +12,11 @@ export const Menu = () => {
         {MENUITEMS.map(({ text, route, tooltip }) => {
           return (
             <li key={route + text} className={styles['menu_item']} {...(tooltip && { 'data-tooltip': tooltip })}>
-              <NavLink className={styles['menu_link']} to={route} onClick={(e) => onClick(e, route)}>
+              <NavLink
+                className={({ isActive }) => [styles['menu_link'], isActive ? styles.active : ''].join(' ')}
+                to={route ? route : '*'}
+                onClick={(e) => onClick(e, route)}
+              >
                 <span className={styles['item_text']}>{text}</span>
                 <span className={route ? styles.bg1 : styles['bg1__indevelop']}></span>
               </NavLink>

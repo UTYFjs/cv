@@ -263,7 +263,7 @@ export const PROJECT_NODEJS_DATA: ProjectDataType[] = [
       },
       {
         name: '',
-        features: [{ text: 'Контенеризация' }, { text: 'Обращение к PostgreSQL через ORM Prisma' }],
+        features: [{ text: 'Контейнеризация' }, { text: 'Обращение к PostgreSQL через ORM Prisma' }],
         linkTask:
           'https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/containerization-database-orm/assignment.md',
         linkPR: 'https://github.com/UTYFjs/nodejs2023Q2-service/pull/2',

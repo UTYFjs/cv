@@ -135,5 +135,3 @@ export const ViberSvg = ({ color = 'currentColor', className, width = '100%', he
     />
   </svg>
 );
-
-export const StarSvg = () => {};
