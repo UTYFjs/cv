@@ -18,17 +18,17 @@
   gap: $gap-xl;
 }
 
-.version:first-child::before {
-  content: 'git init \a git add . \a git commit -m "init: cv project"';
-
-  //content: 'git init';
-  @include font-bg-code;
-}
-
 .version::before {
   content: 'git merge main \a git push';
   @include font-bg-code;
 }
+
+.version:first-child::before {
+  content: 'git init \a git add . \a git commit -m "init: cv project"';
+  @include font-bg-code;
+}
+
+
 
 .version:last-child::after {
   content: 'to be continued...';
@@ -78,7 +78,6 @@
   height: 3px;
   border-left: 2px solid $palitra2-light;
   border-bottom: 2px solid $palitra2-light;
-  transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 

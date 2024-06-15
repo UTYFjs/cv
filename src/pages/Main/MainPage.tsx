@@ -1,5 +1,4 @@
 import './mainPage.scss';
-import { Header } from '~/components/header/Header';
 import { Button } from '~/components/button/Button';
 import { Footer } from '~/components/footer/Footer';
 import { animated, useSpring } from '@react-spring/web';
@@ -81,7 +80,6 @@ export const MainPage = () => {
   };
   return (
     <>
-      {/* <Header /> */}
       <main
         className="main"
         onMouseMove={(e) => {
@@ -92,7 +90,6 @@ export const MainPage = () => {
       >
         <div className="cv">
           <div className="info">
-            {/* <p className="hello">Hello world!</p> */}
             <h1 className="name"> Сугаков Геннадий</h1>
             <h2 className="speciality">Javascript | Front-end | React Developer</h2>
             <p className="addition"> Сайт еще в разработке, но Вы можете ознакомиться с моим резюме:</p>

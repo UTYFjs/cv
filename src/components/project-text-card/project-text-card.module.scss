@@ -2,18 +2,22 @@
 
 .project-text-card {
   @include flex;
+
   border-bottom: 2px solid $palitra2-light;
   padding: $p 0;
 }
 
 .title-wrapper {
   @include flex($direction: column);
+
   max-width: 30%;
   flex-basis: 20%;
   color: $character-dark-primary-85;
+
   .title {
     color: $character-light-table-header;
   }
+
   .stack {
     margin-top: 1rem;
   }
@@ -29,29 +33,6 @@
   .sprints {
     margin-top: $m-s;
   }
-  .sprint {
-    @include flex();
-    border-top: 1px solid $character-dark-primary-85;
-
-    .sprint_title {
-      flex-basis: 50px;
-    }
-    .list {
-      flex-grow: 1;
-    }
-    .links {
-      @include flex($direction: column, $align: center);
-      gap: $gap-xs;
-      a {
-        color: $character-dark-primary-85;
-        margin-right: $m-xl;
-        padding: $p-xs;
-      }
-      a:hover {
-        color: $palitra2-light;
-      }
-    }
-  }
 
   .btn {
     align-self: flex-start;
@@ -60,4 +41,34 @@
 
 .list {
   margin-block-start: 0;
+}
+
+.sprint {
+  @include flex;
+
+  border-top: 1px solid $character-dark-primary-85;
+
+  .sprint_title {
+    flex-basis: 50px;
+  }
+
+  .list {
+    flex-grow: 1;
+  }
+}
+
+.links {
+  @include flex($direction: column, $align: center);
+
+  gap: $gap-xs;
+
+  a {
+    color: $character-dark-primary-85;
+    margin-right: $m-xl;
+    padding: $p-xs;
+  }
+
+  a:hover {
+    color: $palitra2-light;
+  }
 }

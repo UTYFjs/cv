@@ -4,6 +4,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -19,12 +20,14 @@
 
 .project_sprint {
   @include flex($justify: space-between);
+
   gap: $gap;
 }
 
 .features-list {
   flex-basis: 40%;
 }
+
 .feature {
   position: relative;
   left: 0;
@@ -34,11 +37,13 @@
   margin: $m-xs 0;
   transition: left 0.5s;
 }
+
 .feature:hover {
   cursor: pointer;
   left: 15px;
 }
-.feature:before {
+
+.feature::before {
   content: '';
   position: absolute;
   background: center/contain no-repeat url('./svg/star.svg');
@@ -46,12 +51,12 @@
   width: 0;
   height: 0;
   left: 100%;
-  transform-origin: right;
   transition: left 1s cubic-bezier(0.09, 2.57, 0.1, -0.26);
   transform-origin: center center;
   animation: 2s linear 0s infinite spin;
 }
-.feature:hover:before {
+
+.feature:hover::before {
   content: '';
   width: 20px;
   height: 20px;
@@ -63,6 +68,7 @@
   color: $palitra2-light;
   transition: left 0.5s;
 }
+
 .active::before {
   content: '';
   position: absolute;

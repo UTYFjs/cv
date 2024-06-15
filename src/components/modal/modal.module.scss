@@ -2,6 +2,7 @@
 
 .modal {
   @include flex($align: center, $justify: center);
+
   height: 100%;
   width: 100%;
   background: #00000080;
@@ -14,10 +15,12 @@
   transition: opacity 0.8s;
   z-index: 2;
 }
+
 .modal.active {
   transform: scale(1);
   opacity: 1;
 }
+
 .modal_content {
   padding: $p;
   border-radius: 20px;

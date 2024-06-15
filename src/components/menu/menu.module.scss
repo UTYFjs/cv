@@ -1,13 +1,15 @@
 @use '../../styles/main.scss' as *;
 
 @keyframes pulse {
-  from {
+  0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
-  to {
+
+  100% {
     transform: scale(1);
   }
 }
@@ -36,18 +38,43 @@
   text-decoration: none;
 }
 
-.menu_link.active {
-  .item_text {
-    font-weight: 900;
-  }
-  .bg1 {
-    transform: rotate(0deg);
-    animation: 2s linear 0s infinite pulse;
-  }
+.bg1,
+.bg2,
+.bg1__indevelop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.bg1 {
+  background: $palitra2-light;
+  transform: rotate(-10deg);
+}
+
+.bg1__indevelop {
+  background: $character-dark-secondary-45;
+  transform: rotate(-10deg);
 }
 
 .item_text {
   color: $character-dark-table-header;
+}
+
+.menu_link.active {
+  .item_text {
+    font-weight: 900;
+  }
+
+  .bg1 {
+    transform: rotate(0deg);
+    animation: 2s linear 0s infinite pulse;
+  }
 }
 
 [data-tooltip] {
@@ -78,39 +105,8 @@
   top: 2.2em;
 }
 
-.bg1,
-.bg2,
-.bg1__indevelop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  z-index: -1;
-  transition: all 0.5s;
-}
-
-.bg1 {
-  background: $palitra2-light;
-  transform: rotate(-10deg);
-}
-
-.bg1__indevelop {
-  background: $character-dark-secondary-45;
-  transform: rotate(-10deg);
-}
-
-.menu_item:hover {
-}
-
 .menu_item :hover + .bg1 {
   transform: rotate(0deg);
-}
-
-.menu_item.active + .bg1 {
-  transform: rotate(0deg) !important;
 }
 
 @include for-phone {

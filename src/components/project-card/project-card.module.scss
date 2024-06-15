@@ -19,11 +19,6 @@
   border-radius: 6px;
 }
 
-.img:hover + .project-card_description,
-.project-card_description:hover {
-  right: 0;
-}
-
 .project-card_description {
   position: absolute;
   top: 10%;
@@ -36,10 +31,17 @@
   color: $character-light-table-header;
   transition: all 0.6s ease-in;
 }
+
+.img:hover + .project-card_description,
+.project-card_description:hover {
+  right: 0;
+}
+
 .btn_sprints {
   margin: 0 auto;
   margin-top: $m;
 }
+
 .btns {
   @include flex;
 

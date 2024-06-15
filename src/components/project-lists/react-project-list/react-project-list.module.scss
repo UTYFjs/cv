@@ -2,6 +2,7 @@
 
 .projects_react {
   @include flex($justify: space-around);
+
   gap: $gap-14xl;
   max-width: 1600px;
   max-height: calc(100vh - 220px);

@@ -7,7 +7,6 @@ type SocialProps = {
 export const Social = ({ style }: SocialProps) => (
   <>
     <div className={styles.social} style={style}>
-      {/* <img className={styles['social-icon']} src={Telegram} /> */}
       <TelegramSvg className={styles['social-icon']} onClick={() => window.open('https://t.me/utyfjs')} />
       <ViberSvg className={styles['social-icon']} onClick={() => window.open('viber://chat?number=%2B375292437459')} />
       <GithubSvg className={styles['social-icon']} onClick={() => window.open('https://github.com/UTYFjs')} />
