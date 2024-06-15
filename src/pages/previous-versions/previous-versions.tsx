@@ -14,7 +14,7 @@ export const PreviousVersions = () => (
             <li>Main Page с parallax анимациями</li>
           </ul>
           <a className={styles.link} href="https://suhakou-henadzi-v-01.netlify.app/" target="_blank" rel="noreferrer">
-            Link
+            Link V0.1
           </a>
         </div>
       </div>
@@ -33,7 +33,7 @@ export const PreviousVersions = () => (
           </ul>
 
           <a className={styles.link} href="https://suhakou-henadzi.netlify.app/" target="_blank" rel="noreferrer">
-            Link
+            Link Current version
           </a>
         </div>
       </div>

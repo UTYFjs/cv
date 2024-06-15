@@ -36,7 +36,13 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
     sprints: [
       {
         name: 'Главная страница',
-        features: [{ text: 'Главная страница', srcImg: './image/cleverfit/main_1.jpg' }],
+        features: [
+          {
+            text: 'Главная страница c которой осуществляется переход на основные страницы приложения',
+            srcImg: './image/cleverfit/main_1.jpg',
+          },
+          { text: 'Схлопывающееся боковое меню', srcImg: './image/cleverfit/main_2.jpg' },
+        ],
         linkTask: '',
         linkPR: '',
       },
@@ -50,6 +56,10 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
           {
             text: 'Результирующие страницы отображающие ошибку запроса, либо успех, начинаются с относительного url: /result переход на эти страницы по прямой ссылке невозможен, при попытке перехода по прямой ссылке происходит редирект на страницу авторизации, на эти страницы можно попасть только по результатам запросов на сервер',
             srcImg: './image/cleverfit/recovery_password_3.jpg',
+          },
+          {
+            text: 'Обработка ошибок запросов',
+            srcImg: './image/cleverfit/change-pass-error-6.jpg',
           },
         ],
         linkTask: '',
@@ -80,7 +90,7 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
             srcImg: './image/cleverfit/calendar_2.jpg',
           },
           {
-            text: 'В тренировку можно добавить сколько угодно упражнений, выбрать количество подходов, вес и количество упражнений для сохранениии тренировки после добавления нужных упражнений нужно нажать кнопку "сохранить изменения".',
+            text: 'В тренировку можно добавить сколько угодно упражнений, выбрать количество подходов, вес и количество повторений для сохранениии тренировки после добавления нужных упражнений нужно нажать кнопку "сохранить изменения".',
             srcImg: './image/cleverfit/calendar_4.jpg',
           },
           {
@@ -89,7 +99,12 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
           },
           {
             text: 'Различия при работе с мобильным и полноформатным календарем',
-            srcImg: './image/cleverfit/calendar_2_360.jpg',
+            //srcImg: './image/cleverfit/calendar_2_360.jpg',
+            srcImg: './image/cleverfit/calendar_mobile.jpg',
+          },
+          {
+            text: 'Обработка ошибок запросов',
+            srcImg: './image/cleverfit/create-new-training-2.jpg',
           },
         ],
         linkTask: '',
@@ -113,6 +128,10 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
             text: 'Страница настроек можно активировать PRO тариф, если он еще не активирован. активация тарифа происходит через письмо пришедщее на e-mail. после отправления запроса на смену тарифа происходит разлогин из приложения',
             srcImg: './image/cleverfit/profile_5.jpg',
           },
+          {
+            text: 'После перехода на новый тариф отправляется письмо на почту указанную при регистрации и происходит разлогин из приложения',
+            srcImg: './image/cleverfit/profile_8.jpg',
+          },
           { text: 'Eсли PRO тариф активирован в карточке отображается до какой даты он активирован', srcImg: '' },
           {
             text: 'Cо страницы настроек можно опубликовать отзыв о приложении(открывается модальное окно), а так же перейти на страницу с отзывами',
@@ -127,31 +146,31 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
         features: [
           {
             text: 'Тренировки пользователя с возможностью сортировки по периодичности',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: './image/cleverfit/trainings_1.jpg',
           },
           {
-            text: 'Можно создавать тренировки с периодичностью от ежедневных до раз в 7 дней. Такие тренировки создаются на 3 месяца вперед.',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            text: 'Можно создавать тренировки с периодичностью от ежедневных до одной тренировки в 7 дней. Такие тренировки создаются на 3 месяца вперед.',
+            srcImg: '',
           },
           {
             text: 'Можно создавать совместные тренировки с другими пользователями, которые согласны на проведение таких тренировок',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: '',
           },
           {
             text: 'Если вам пришло предложение на совместную тренировку, вы можете его принять, либо отклонить',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: './image/cleverfit/trainings_2_partners.jpg',
           },
           {
             text: 'Имеется поиск по имени среди пользователей согласных на совместные тренировки',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: './image/cleverfit/trainings_search.jpg',
           },
           {
-            text: 'Для совместных тренировок можно выбирать только среди таких пользователей у которых самая популярная тренировка имеет такой же тип как и ваша.',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            text: 'Для совместных тренировок можно выбирать пользователей у которых самая популярная тренировка имеет такой же тип как и ваша.',
+            srcImg: '',
           },
           {
             text: 'Уже назначенные совместные тренировки можно отменять',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: './image/cleverfit/trainings_3_partner-card.jpg',
           },
         ],
         linkTask: '',
@@ -161,16 +180,12 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
         name: 'Страница достижений',
         features: [
           {
-            text: 'Cтраница содержит различные статистические данные о тренировках, упражнениях, нагрузках за период неделя и несяц',
-            srcImg: './image/cleverfit/achievement_1.jpg',
-          },
-          {
-            text: 'Cтраница содержит данные о средних нагрузках по днях недели за периоды неделя и месяц',
+            text: 'Cтраница содержит данные о средних нагрузках по днях недели за период (неделя/ месяц)',
             srcImg: './image/cleverfit/achievement_1.jpg',
           },
           {
             text: 'Содержит информацию о частых тренировках по дням недели  и за весь выбранный период(неделя/месяц)',
-            srcImg: './image/cleverfit/achievement_1.jpg',
+            srcImg: './image/cleverfit/achievement_2.jpg',
           },
         ],
         linkTask: '',

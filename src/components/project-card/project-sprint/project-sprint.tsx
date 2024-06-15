@@ -2,7 +2,7 @@ import { SprintType } from '~/constants/projects-constants';
 
 import styles from './project-sprint.module.scss';
 import { nanoid } from 'nanoid';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
 type ProjectSprintProps = {
