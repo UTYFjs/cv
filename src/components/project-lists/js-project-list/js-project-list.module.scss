@@ -1,0 +1,32 @@
+@use '../../../styles/main.scss' as *;
+
+.projects_js {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-auto-columns: 45%;
+  gap: 20px;
+  justify-content: center;
+  justify-items: center;
+  max-height: calc(100vh - 220px);
+
+  .card {
+    transform: translateX(110vh);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .card.show {
+    //margin-top: 8%;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .card:nth-of-type(even) {
+    transform: translateX(-110vh);
+  }
+
+  .card:nth-of-type(even).show {
+    margin-top: 0;
+    transform: translateX(0);
+  }
+}

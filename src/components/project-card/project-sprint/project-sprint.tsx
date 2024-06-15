@@ -2,7 +2,7 @@ import { SprintType } from '~/constants/projects-constants';
 
 import styles from './project-sprint.module.scss';
 import { nanoid } from 'nanoid';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 
 type ProjectSprintProps = {
@@ -17,12 +17,13 @@ export const ProjectSprint = ({ sprint }: ProjectSprintProps) => {
     setActiveFeature(0);
     setSrcImg(sprint.features[0]?.srcImg || '');
   }, [sprint]);
+
   const handleOnClickFeature = (index: number) => {
     setActiveFeature(index);
     setSrcImg(sprint.features[index]?.srcImg || '');
   };
   return (
-    <>
+    <div className={styles.sprint}>
       <p className={styles.title}> {sprint.name}</p>
       <div className={styles['project_sprint']}>
         <ul className={styles['features-list']}>
@@ -38,6 +39,6 @@ export const ProjectSprint = ({ sprint }: ProjectSprintProps) => {
         </ul>
         <img className={styles['img']} src={srcImg} />
       </div>
-    </>
+    </div>
   );
 };
