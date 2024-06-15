@@ -27,7 +27,7 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
   {
     id: nanoid(),
     title: 'CleverFit',
-    src: './public/image/cleverfit-vertical.jpg',
+    src: './image/cleverfit-vertical.jpg',
     shortDescription: 'Фитнес приложение',
     description: `Индивидуальный проект. 
       Выполнен в 7 спринтов c контролем через тестирование Cypress на каждом спринте. 
@@ -198,7 +198,7 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
   {
     id: nanoid(),
     title: 'SuperBoards',
-    src: './public/image/superboards-vertical-1.jpg',
+    src: './image/superboards-vertical-1.jpg',
     shortDescription: 'Аналог доски Trello',
     description: `Командный проект. 
     Приложение для управления проектами, позволяющеее централизованно управлять задачами и контролировать ход их выполнения в команде.`,
@@ -209,7 +209,7 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
   {
     id: nanoid(),
     title: 'Genuli',
-    src: './public/image/genuli-vertical.jpg',
+    src: './image/genuli-vertical.jpg',
     shortDescription: 'Интернет магазин изделий из кожи ручной работы',
     description:
       'Индивидуальный проект. Интернет - магазин с реализованной фильтрацией, сортировкой, поиском. имеется возможность добавить в избранное, корзину, возможность выбора дополнительных опций для товаров.',
@@ -223,7 +223,7 @@ export const PROJECT_JS_DATA: ProjectDataType[] = [
   {
     id: nanoid(),
     title: 'Virtual Keyboard',
-    src: './public/image/virtual-keyboard-2.jpg',
+    src: './image/virtual-keyboard-2.jpg',
     shortDescription: 'Виртуальная клавиатура c функцией распознавания речи',
     description:
       'Поддерживает функциональность стандартной Windows клавиатуры.  Имеется функция распознавания речи в текст(в браузере требуется предоставить доступ к микрофону). Реализована  через работу c DOM с помошью JS и простого CSS, без HTML.',
@@ -234,7 +234,7 @@ export const PROJECT_JS_DATA: ProjectDataType[] = [
   {
     id: nanoid(),
     title: 'Shelter',
-    src: './public/image/shelter-2.jpg',
+    src: './image/shelter-2.jpg',
     shortDescription: 'Pixel perfect верстка',
     description: 'Пиксель-перфект верстка из макета Figma',
     stack: ['JS', 'HTML', 'CSS'],
