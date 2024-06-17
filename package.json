@@ -1,6 +1,7 @@
 {
     "name": "cv-suhakou-henadzi",
     "version": "1.0.0",
+    "private": true,
     "type": "module",
     "author": {
         "name": "Suhakou Henadzi"
