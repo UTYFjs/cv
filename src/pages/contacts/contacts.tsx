@@ -1,51 +1,45 @@
-import { useEffect, useRef } from 'react';
-import styles from './contacts.module.scss';
+import { useRef } from 'react';
 import { Button } from '~/components/button/Button';
 import { Link } from 'react-router-dom';
-import { checkValidity } from '~/utils/checkValidity';
+import emailjs from '@emailjs/browser';
+import styles from './contacts.module.scss';
 
 export const Contacts = () => {
   const form = useRef<HTMLFormElement>(null);
-  useEffect(() => {
-    if (form.current) {
-      form.current.addEventListener('input', checkValidity);
-      // return form.current.removeEventListener('input', checkValidity);
-    }
-  }, [form]);
-
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!form.current) return;
+    // eslint-disable-next-line import/no-named-as-default-member
+    emailjs.sendForm('service_trd72dm', 'template_obn704l', form.current, 'JJ-HPOUdurW6enlYx').then(
+      (result) => {
+        console.log(result.text);
+        console.log('message sent!');
+      },
+      (error) => {
+        console.log(error.text);
+        console.log('error sending message, try again!');
+      }
+    );
+    e.currentTarget.reset();
+  };
   return (
     <div className={styles['contact-page']}>
-      <p className={styles['page-title']}>Связаться со мной</p>
+      <p className={styles['page-title']}>Контакты</p>
 
-      <form className={styles['form']} ref={form}>
-        <input className={styles.input} type="text" name="name" placeholder="Имя" required />
-        <input className={styles.input} type="email" name="e-mail" placeholder="e-mail" required />
+      <form className={styles['form']} ref={form} onSubmit={sendEmail}>
+        <input className={styles.input} type="text" name="from_name" placeholder="Имя" required />
+        <input className={styles.input} type="email" name="email" placeholder="Ваш e-mail" required />
         <input className={styles.input} type="text" name="theme" placeholder="Тема сообщения " required />
         <textarea
           className={styles.textarea}
           name="message"
           placeholder="Сообщение"
           rows={8}
-          minLength={15}
+          minLength={10}
           required
         ></textarea>
-        <button className={styles.btn} type="submit">
-          Отправить сообщение
-        </button>
-        <Button
-          className={styles.btn}
-          type="submit"
-          // onClick={(e) =>
-          //   console.log(
-          //     'message submit',
-          //     e,
-          //     form.current?.elements?.message.value,
-          //     e.target.checkValidity(),
-          //     form.current?.checkValidity()
-          //   )
-          // }
-        >
-          Отправить сообщение
+        <Button className={styles.btn} type="submit">
+          Отправить мне сообщение
         </Button>
       </form>
 

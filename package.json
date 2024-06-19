@@ -26,6 +26,7 @@
         "stylelint-scss-check": "stylelint-config-prettier-scss-check"
     },
     "dependencies": {
+        "@emailjs/browser": "^4.3.3",
         "@react-spring/web": "^9.7.3",
         "@reduxjs/toolkit": "^2.2.5",
         "@testing-library/jest-dom": "^6.4.5",

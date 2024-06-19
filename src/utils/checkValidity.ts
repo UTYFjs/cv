@@ -6,6 +6,7 @@ export const checkValidity = (e: Event) => {
     target instanceof HTMLTextAreaElement ||
     target instanceof HTMLSelectElement
   ) {
+    e.preventDefault();
     if (target.form) {
       console.log('validity', target.form.checkValidity());
     }

@@ -1,15 +1,17 @@
 @use '../../styles//main.scss' as *;
 .contact-page {
   @include flex($direction: column, $align: center);
-
   flex-grow: 1;
   height: 100%;
 }
+
 .page-title {
   font-size: 2em;
   font-weight: 600;
   margin: $m;
+  margin-bottom: $m-6xl;
 }
+
 .form {
   @include flex($direction: column);
   gap: $gap;
@@ -21,6 +23,10 @@
     background: transparent;
     border: 2px solid $character-dark-disable-25;
     padding: $p-s;
+    box-shadow: 1px 1px 1px $character-dark-secondary-45;
+  }
+  .input {
+    padding: $p-4xs;
   }
 
   .textarea:focus,
@@ -28,10 +34,12 @@
     border: 2px solid $palitra2-light;
   }
 
-  // .input:invalid,
-  // .textarea:invalid {
-  //   border: 2px solid red;
-  // }
+  .input:hover,
+  .textarea:hover {
+    //border: 2px solid red;
+    box-shadow: 2px 2px 5px $character-dark-table-header;
+  }
+
   .btn {
     width: fit-content;
     align-self: center;
@@ -52,9 +60,11 @@
 
 .vertical {
   font-weight: 700;
-  transform: rotate(185deg);
+  transform: rotate(180deg);
   writing-mode: vertical-lr;
+  border-left: 2px solid $palitra2-light;
 }
+
 .contact-list {
   @include flex($direction: column, $justify: space-between);
 
@@ -68,4 +78,3 @@
     text-shadow: 2px 2px 5px $character-dark-table-header;
   }
 }
-

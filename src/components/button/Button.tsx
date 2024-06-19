@@ -20,13 +20,14 @@ export const Button = ({
   children,
   reverseBg = false,
   onClick,
+  ...rest
 }: ButtonProps) => {
   return (
     <button
       className={cn(styles.btn, styles[typeBtn], styles[size], className, reverseBg && styles.reverse)}
       style={style}
-      type="button"
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>
