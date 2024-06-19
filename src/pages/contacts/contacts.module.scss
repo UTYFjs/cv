@@ -1,0 +1,71 @@
+@use '../../styles//main.scss' as *;
+.contact-page {
+  @include flex($direction: column, $align: center);
+
+  flex-grow: 1;
+  height: 100%;
+}
+.page-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin: $m;
+}
+.form {
+  @include flex($direction: column);
+  gap: $gap;
+  flex-grow: 1;
+  width: 660px;
+
+  .textarea,
+  .input {
+    background: transparent;
+    border: 2px solid $character-dark-disable-25;
+    padding: $p-s;
+  }
+
+  .textarea:focus,
+  .input:focus {
+    border: 2px solid $palitra2-light;
+  }
+
+  // .input:invalid,
+  // .textarea:invalid {
+  //   border: 2px solid red;
+  // }
+  .btn {
+    width: fit-content;
+    align-self: center;
+    padding: 0 $p;
+    //border-radius: $br-btn-m;
+    border: 0px;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+}
+
+.contacts {
+  @include flex();
+  gap: $gap;
+  padding: $p;
+}
+
+.vertical {
+  font-weight: 700;
+  transform: rotate(185deg);
+  writing-mode: vertical-lr;
+}
+.contact-list {
+  @include flex($direction: column, $justify: space-between);
+
+  .contact-link {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+  .contact-link:hover {
+    color: $palitra2-light;
+    text-shadow: 2px 2px 5px $character-dark-table-header;
+  }
+}
+

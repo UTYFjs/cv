@@ -2,29 +2,31 @@
 
 .skill-card {
   @include flex($direction: column, $align: center);
- //position: relative;
+
+ // position: relative;
   gap: $gap-xs;
   padding: $p;
-  //border-radius: 2px;
-  //background: #fc570d90;
+
+  // border-radius: 2px;
+  // background: #fc570d90;
   transition: all 0.2s;
   text-decoration: none;
-  color: currentColor;
+  color: currentcolor;
 }
 
 .skill-card:hover {
   cursor: pointer;
-  box-shadow: 0 6px 15px 1px rgba(0, 10, 12, 0.78);
+  box-shadow: 0 6px 15px 1px rgb(0 10 12 / 78%);
   transform: scale(1.5);
   transition: all 0.2s;
-  background: #fc570d;
-  background: #fca70d;
   background: #56585e;
   border-radius: 12px;
+
   .title {
     color: $character-light-table-header;
   }
 }
+
 // .skill-card:after {
 //   content: '';
 //   position: absolute;

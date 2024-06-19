@@ -3,4 +3,5 @@ export const ROUTES = {
   PROJECTS: 'projects',
   PREVIOUS_VERSIONS: 'previous_versions',
   SKILLS: 'skills',
+  CONTACTS: 'contacts',
 };

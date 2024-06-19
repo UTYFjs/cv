@@ -28,7 +28,7 @@ export const MENUITEMS = [
   },
   {
     text: 'Contacts',
-    route: '',
+    route: ROUTES.CONTACTS,
     tooltip: 'Раздел находится в разработке',
   },
 ];
