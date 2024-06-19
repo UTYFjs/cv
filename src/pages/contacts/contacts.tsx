@@ -3,6 +3,7 @@ import { Button } from '~/components/button/Button';
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import styles from './contacts.module.scss';
+import { GithubSvg } from '~/components/custom-icons/CustomIcons';
 
 export const Contacts = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -47,16 +48,16 @@ export const Contacts = () => {
         <div className={styles.vertical}>CONTACT ME:</div>
         <div className={styles['contact-list']}>
           <Link className={styles['contact-link']} to="tel:+995595909226">
-            <span>tel:</span>
+            <p className={styles['contact-title']}>tel:</p>
             <span> +375292437459</span>
           </Link>
           <Link className={styles['contact-link']} to="mailto:belarus1990@gmail.com">
-            <span>e-mail:</span>
+            <span className={styles['contact-title']}>e-mail:</span>
             <span>belarus1990@gmail.com</span>
           </Link>
 
           <Link className={styles['contact-link']} to="https://t.me/utyfjs" target="_blank" rel="noreferrer">
-            <span>telegram:</span>
+            <span className={styles['contact-title']}>telegram:</span>
             <span>@utyfjs</span>
           </Link>
           <Link
@@ -68,6 +69,12 @@ export const Contacts = () => {
             <span>linkedin.com/in/henadzi-suhakou/</span>
           </Link>
         </div>
+        <GithubSvg
+          width={64}
+          height={64}
+          className={styles['github']}
+          onClick={() => window.open('https://github.com/UTYFjs')}
+        />
       </div>
     </div>
   );
