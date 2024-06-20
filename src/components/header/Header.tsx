@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.versions}>
-        <p>V0.2</p>
+        <p>V0.3</p>
         <Link className={styles.link} to={ROUTES.PREVIOUS_VERSIONS}>
           Previous versions
         </Link>

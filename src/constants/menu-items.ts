@@ -9,7 +9,7 @@ export const MENUITEMS = [
   {
     text: 'Skills',
     route: ROUTES.SKILLS,
-    tooltip: 'Раздел находится в разработке',
+    tooltip: '',
   },
   {
     text: 'Projects',
@@ -29,6 +29,6 @@ export const MENUITEMS = [
   {
     text: 'Contacts',
     route: ROUTES.CONTACTS,
-    tooltip: 'Раздел находится в разработке',
+    tooltip: '',
   },
 ];

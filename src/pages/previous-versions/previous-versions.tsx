@@ -32,6 +32,23 @@ export const PreviousVersions = () => (
             <li>Страница предыдущих версий</li>
           </ul>
 
+          <a className={styles.link} href="https://suhakou-henadzi-v-02.netlify.app/" target="_blank" rel="noreferrer">
+            Link Current version
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className={styles.version}>
+      <div className={styles['version-content']}>
+        {' '}
+        <p className={styles['version_title']}>V0.3</p>{' '}
+        <div className={styles['version_description']}>
+          <p className={styles['version_name']}> Skills & Contacts</p>
+          <ul className={styles.list}>
+            <li>Skills page</li>
+            <li>Contacts page</li>
+          </ul>
+
           <a className={styles.link} href="https://suhakou-henadzi.netlify.app/" target="_blank" rel="noreferrer">
             Link Current version
           </a>
