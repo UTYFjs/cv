@@ -33,7 +33,7 @@ export const PreviousVersions = () => (
           </ul>
 
           <a className={styles.link} href="https://suhakou-henadzi-v-02.netlify.app/" target="_blank" rel="noreferrer">
-            Link Current version
+            Link V0.2
           </a>
         </div>
       </div>
