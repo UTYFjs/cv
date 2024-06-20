@@ -3,15 +3,14 @@
 .skill-card {
   @include flex($direction: column, $align: center);
 
- // position: relative;
   gap: $gap-xs;
   padding: $p;
-
-  // border-radius: 2px;
-  // background: #fc570d90;
   transition: all 0.2s;
   text-decoration: none;
   color: currentcolor;
+  .title {
+    text-align: center;
+  }
 }
 
 .skill-card:hover {

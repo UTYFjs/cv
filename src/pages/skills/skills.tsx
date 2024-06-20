@@ -17,6 +17,7 @@ import {
   PrettierSvg,
   PrismaSvg,
   RTLSvg,
+  ReactHookFormSvg,
   ReactRouterSvg,
   ReactSvg,
   ReduxSvg,
@@ -26,6 +27,8 @@ import {
   TSSvg,
   VSCodeSvg,
   WebpackSvg,
+  YarnSvg,
+  ZustandSvg,
 } from '~/components/custom-icons/CustomIcons';
 import styles from './skills.module.scss';
 import { SpringLogo } from '~/components/custom-icons/react-spring-logo/react-spring-logo';
@@ -48,6 +51,11 @@ const skills = [
     icon: <ReduxSvg {...cssWidthHeight} />,
     title: 'Redux Toolkit',
     link: 'https://redux-toolkit.js.org/',
+  },
+  {
+    icon: <ZustandSvg {...cssWidthHeight} width={94} height={64} />,
+    title: 'Zustand',
+    link: 'https://docs.pmnd.rs/zustand/getting-started/introduction',
   },
   {
     icon: <NodeJSSvg {...cssWidthHeight} />,
@@ -89,6 +97,12 @@ const skills = [
     title: 'React Router',
     link: 'https://reactrouter.com/en/main',
   },
+  {
+    icon: <ReactHookFormSvg {...cssWidthHeight} />,
+    title: 'React Hook Form',
+    link: 'https://react-hook-form.com/',
+  },
+
   {
     icon: <JestSvg {...cssWidthHeight} />,
     title: 'Jest',
@@ -166,6 +180,11 @@ const skills = [
     title: 'npm',
     link: 'https://www.npmjs.com/',
   },
+  {
+    icon: <YarnSvg {...cssWidthHeight} />,
+    title: 'yarn',
+    link: 'https://github.com/yarnpkg/yarn#readme',
+  },
 
   {
     icon: <VSCodeSvg {...cssWidthHeight} />,
@@ -177,7 +196,7 @@ export const Skills = () => {
   return (
     <>
       <p className={styles['page-title']}> Технологии и инструменты.</p>
-      <div className={styles.skills} style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className={styles.skills}>
         {skills.map((skill) => (
           <SkillCard key={nanoid()} icon={skill.icon} title={skill.title} link={skill.link} />
         ))}
