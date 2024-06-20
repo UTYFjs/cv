@@ -1,0 +1,126 @@
+@use '../../styles//main.scss' as *;
+
+.contact-page {
+  @include flex($direction: column, $align: center);
+
+  flex-grow: 1;
+  height: 100%;
+}
+
+.page-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin: $m;
+  margin-bottom: $m-6xl;
+}
+
+.form {
+  @include flex($direction: column);
+
+  gap: $gap;
+  flex-grow: 1;
+  width: 660px;
+  @include for-tablet {
+    width: 90vw;
+  }
+
+  @include for-phone {
+    gap: $gap-xs;
+    width: 90vw;
+  }
+
+  .textarea,
+  .input {
+    background: transparent;
+    border: 2px solid $character-dark-disable-25;
+    padding: $p-s;
+    box-shadow: 1px 1px 1px $character-dark-secondary-45;
+  }
+
+  .input {
+    padding: $p-4xs;
+  }
+
+  .textarea:focus,
+  .input:focus {
+    border: 2px solid $palitra2-light;
+  }
+
+  .input:hover,
+  .textarea:hover {
+    // border: 2px solid red;
+    box-shadow: 2px 2px 5px $character-dark-table-header;
+  }
+
+  .btn {
+    width: fit-content;
+    align-self: center;
+    padding: 0 $p;
+    border: 0;
+    @include for-phone {
+      padding: 0 $p-xs;
+      margin-top: $m;
+      height: 44px;
+    }
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+}
+
+.contacts {
+  @include flex;
+
+  gap: $gap;
+  padding: $p;
+  @include for-phone {
+    gap: $gap-xs;
+    padding: $p-4xs;
+  }
+}
+
+.vertical {
+  font-weight: 700;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  border-left: 2px solid $palitra2-light;
+}
+
+.contact-list {
+  @include flex($direction: column, $justify: space-between);
+}
+
+.contact-link {
+  @include flex;
+
+  text-decoration: none;
+  color: currentcolor;
+
+  .contact-title {
+    display: inline-block;
+    flex-basis: 60px;
+    font-weight: 600px;
+  }
+}
+
+.contact-link:hover {
+  color: $palitra2-light;
+  text-shadow: 2px 2px 5px $character-dark-table-header;
+}
+
+.github {
+  align-self: center;
+  margin-left: $m-xl;
+  transition: scale 0.6s;
+  @include for-phone {
+    margin-left: $m-4xs;
+  }
+}
+
+.github:hover {
+  cursor: pointer;
+  scale: 1.2;
+  color: $palitra2-light;
+  transition: all 0.5s;
+}

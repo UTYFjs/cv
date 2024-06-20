@@ -1,17 +1,19 @@
+import { ROUTES } from './routes-constants';
+
 export const MENUITEMS = [
   {
     text: 'Main',
-    route: '/',
+    route: ROUTES.HOMEPAGE_ROUTE,
     tooltip: '',
   },
   {
     text: 'Skills',
-    route: '',
-    tooltip: 'Раздел находится в разработке',
+    route: ROUTES.SKILLS,
+    tooltip: '',
   },
   {
     text: 'Projects',
-    route: 'projects',
+    route: ROUTES.PROJECTS,
     tooltip: '',
   },
   {
@@ -26,7 +28,7 @@ export const MENUITEMS = [
   },
   {
     text: 'Contacts',
-    route: '',
-    tooltip: 'Раздел находится в разработке',
+    route: ROUTES.CONTACTS,
+    tooltip: '',
   },
 ];

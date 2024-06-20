@@ -1,0 +1,25 @@
+@use '../../styles/main.scss' as *;
+
+.page-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: $m-xl;
+  margin-bottom: $m-xl;
+}
+
+.skills {
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 20px;
+  padding: $p-xl;
+
+  @include for-tablet {
+    max-width: 90vw;
+  }
+  @include for-phone {
+    max-width: 95vw;
+  }
+
+  //max-width: 1280px;
+}
