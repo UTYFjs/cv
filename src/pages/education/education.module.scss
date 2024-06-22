@@ -1,5 +1,39 @@
 @use '../../styles/main.scss' as *;
 
+.education {
+  width: 70vw;
+  margin-bottom: $m-10xl;
+  @include for-tablet {
+    width: 90vw;
+  }
+  @include for-phone {
+    width: 90vw;
+  }
+}
+
 .title {
   @include font-page-title();
+  text-align: center;
+}
+
+.education-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-gap: $gap-14xl;
+  max-width: 90vw;
+  margin: $m-xl 0;
+
+  @include for-phone {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  //flex-wrap: wrap;
+}
+
+.high-education-wrapper {
+  @include flex($justify: center);
+  gap: $gap;
+  width: 100%;
+  border: 3px solid $palitra2-light;
+  padding: $p-xl
 }

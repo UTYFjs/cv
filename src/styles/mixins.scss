@@ -19,6 +19,9 @@
   justify-content: $justify;
 }
 
+@mixin grid-auto-column() {
+}
+
 @mixin font-bg-code {
   display: block;
   font-family: 'Overpass Mono', monospace;
