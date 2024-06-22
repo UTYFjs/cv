@@ -18,7 +18,7 @@ export const MENUITEMS = [
   },
   {
     text: 'Education',
-    route: '',
+    route: ROUTES.EDUCATION,
     tooltip: 'Раздел находится в разработке',
   },
   {

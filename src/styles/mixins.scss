@@ -38,7 +38,12 @@
   color: $color-myred;
   font-size: 0.8rem;
   font-weight: 600;
-
-  // text-shadow: 0 0 10px $white1;
   line-height: 1.5rem;
+}
+
+@mixin font-page-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: $m-xl;
+  margin-bottom: $m-xl;
 }
