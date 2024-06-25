@@ -13,7 +13,7 @@ export const certificate: CertificateType[] = [
     id: nanoid(),
     imgSrc: './image/education/marathon.webp',
     link: 'https://drive.google.com/file/d/1-GZgimSdZRsDWnkMi5WdG24Eqllr5DBA/view',
-    title: 'Frontend Marathon / Clevertech',
+    title: 'Frontend Marathon / Clevertec',
     schoolLink: '',
   },
   {
