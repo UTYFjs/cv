@@ -65,6 +65,7 @@ $palitra2-middle: #1f1f1f;
 // $palitra2-middle: #175800;
 // $palitra2-light: #e4a015;
 $palitra2-light: #fca70d;
+$palitra2-medium: #df9306;
 $palitra2-red: #fc570d;
 
 // $palitra2-light: #753a00;
@@ -158,7 +159,6 @@ $p-12xl: 44px;
 $p-13xl: 46px;
 $p-14xl: 48px;
 
-
 // border-radius
 $br-btn-s: 2px;
 $br-btn-m: 5px;
@@ -172,3 +172,7 @@ $large-space: 64px;
 $phone-size: 600px;
 $tablet-size: 992px;
 $desktop-size: 1200px;
+
+// box-shadow
+
+$box-shadow-card: 0 6px 15px 1px rgb(0 10 12 / 78%);

@@ -19,9 +19,6 @@
   justify-content: $justify;
 }
 
-@mixin grid-auto-column() {
-}
-
 @mixin font-bg-code {
   display: block;
   font-family: 'Overpass Mono', monospace;
@@ -49,4 +46,15 @@
   font-weight: 600;
   margin-top: $m-xl;
   margin-bottom: $m-xl;
+}
+
+@mixin blur($blur: 2px) {
+  backdrop-filter: blur($blur);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.4s;
 }
