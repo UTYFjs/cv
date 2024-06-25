@@ -3,13 +3,14 @@ import { Button } from '~/components/button/Button';
 import { Footer } from '~/components/footer/Footer';
 import { animated, useSpring } from '@react-spring/web';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const calcParallaxBgPosition = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const parallaxBgPosition = (x: number, y: number, delay: number) => `translate(${x / delay}px,${y / delay}px)`;
 const parallaxBg = [
   { text: '[ ... ]', top: '10vh', right: '24vw', delay: 3 },
   { text: '!==', top: '14vh', right: '10vw', delay: 13 },
-  { text: '( ) => {   }', top: '28vh', right: '55vw', delay: 20 },
+  { text: '( ) => {   }', top: '34vh', right: '55vw', delay: 20 },
   { text: '&&', top: '35vh', right: '36vw', delay: 8 },
   { text: 'function*', top: '47vh', right: '15w', delay: 17 },
   { text: '</>', top: '51vh', right: '40vw', delay: 10 },
@@ -78,6 +79,14 @@ export const MainPage = () => {
       });
     }
   };
+  const handleDownloadCV = (src: string) => {
+    const anchor = document.createElement('a');
+    anchor.href = src;
+    anchor.download = src;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+  };
   return (
     <>
       <main
@@ -95,25 +104,37 @@ export const MainPage = () => {
             <p className="addition"> Сайт еще в разработке, но Вы можете ознакомиться с моим резюме:</p>
             <div className="links">
               <Button
-                reverseBg={true}
-                onClick={() => {
-                  const anchor = document.createElement('a');
-                  anchor.href = 'CV_Suhakou_Henadzi_Frontend_06.2024_RU.pdf';
-                  anchor.download = 'CV_Suhakou_Henadzi_Frontend_06.2024_RU.pdf';
-                  document.body.appendChild(anchor);
-                  anchor.click();
-                  document.body.removeChild(anchor);
-                }}
+                reverseBg={false}
+                style={{ width: '100%' }}
+                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_25.06.24_EN.pdf')}
               >
-                Скачать PDF
+                Download PDF <span className="span__en">(EN)</span>
               </Button>
+              <Link
+                to={'https://drive.google.com/file/d/1kR21eJJVyWnMAplYq49S9ytlGQ4SVzCl/view?usp=drive_link'}
+                target="_blank"
+              >
+                {' '}
+                <Button reverseBg={true} style={{ width: '100%' }}>
+                  Open СV PDF <span className="span__en">(EN)</span>
+                </Button>
+              </Link>
+
               <Button
-                onClick={() =>
-                  window.open('https://drive.google.com/file/d/1_0O2-lWQh5hvcNMIYrmsEpIKdyiGw5Ji/view?usp=drive_link')
-                }
+                reverseBg={true}
+                style={{ width: '100%' }}
+                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_25.06.24_RU.pdf')}
               >
-                Открыть СV PDF
+                Скачать PDF <span className="span__ru">(RU)</span>
               </Button>
+              <Link
+                to="https://drive.google.com/file/d/1Bf-rnlbxpEzaD5Bo4gmI67KTyXK_0BTW/view?usp=drive_link"
+                target="_blank"
+              >
+                <Button style={{ width: '100%' }}>
+                  Открыть СV PDF <span className="span__ru">(RU)</span>
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="foto" ref={cardRef}>
