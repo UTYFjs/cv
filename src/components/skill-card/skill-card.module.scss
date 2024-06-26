@@ -21,7 +21,10 @@
   transition: all 0.2s;
   background: #56585e;
   border-radius: 12px;
-
+  @include for-phone {
+    transform: scale(1);
+    background: none;
+  }
   .title {
     color: $character-light-table-header;
   }

@@ -16,6 +16,7 @@
   @include flex;
 
   gap: $gap-xl;
+
 }
 
 .version::before {
@@ -47,6 +48,9 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-top: $m-4xl;
+  @include for-phone{
+    flex-basis: 70px;
+  }
 }
 
 .version_description {

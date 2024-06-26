@@ -29,6 +29,9 @@
   text-shadow: 0 0 10px $white1;
   line-height: 1.5rem;
   margin-left: -2rem;
+  @include for-phone {
+    margin-left: -1rem;
+  }
 }
 
 @mixin font-bg-current {

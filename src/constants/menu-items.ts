@@ -27,7 +27,7 @@ export const MENUITEMS = [
     tooltip: 'Раздел находится в разработке',
   },
   {
-    text: 'My Hobby',
+    text: 'Hobby',
     route: '',
     tooltip: 'Раздел находится в разработке',
   },
