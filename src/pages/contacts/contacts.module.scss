@@ -8,10 +8,7 @@
 }
 
 .page-title {
-  font-size: 2em;
-  font-weight: 600;
-  margin: $m;
-  margin-bottom: $m-6xl;
+  @include font-page-title;
 }
 
 .form {
@@ -48,7 +45,6 @@
 
   .input:hover,
   .textarea:hover {
-    // border: 2px solid red;
     box-shadow: 2px 2px 5px $character-dark-table-header;
   }
 

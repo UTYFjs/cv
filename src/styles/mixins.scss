@@ -29,6 +29,9 @@
   text-shadow: 0 0 10px $white1;
   line-height: 1.5rem;
   margin-left: -2rem;
+  @include for-phone {
+    margin-left: -1rem;
+  }
 }
 
 @mixin font-bg-current {
@@ -38,7 +41,23 @@
   color: $color-myred;
   font-size: 0.8rem;
   font-weight: 600;
-
-  // text-shadow: 0 0 10px $white1;
   line-height: 1.5rem;
+}
+
+@mixin font-page-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: $m-xl;
+  margin-bottom: $m-xl;
+}
+
+@mixin blur($blur: 2px) {
+  backdrop-filter: blur($blur);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.4s;
 }

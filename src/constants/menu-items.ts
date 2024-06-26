@@ -18,11 +18,16 @@ export const MENUITEMS = [
   },
   {
     text: 'Education',
+    route: ROUTES.EDUCATION,
+    tooltip: '',
+  },
+  {
+    text: 'Expierence',
     route: '',
     tooltip: 'Раздел находится в разработке',
   },
   {
-    text: 'Expierence',
+    text: 'Hobby',
     route: '',
     tooltip: 'Раздел находится в разработке',
   },

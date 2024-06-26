@@ -1,0 +1,85 @@
+@use '../../styles//main.scss' as *;
+@keyframes shape {
+  0% {
+    border-radius: 3% 3% 3% 3% / 3% 3% 3% 3%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+
+  34% {
+    border-radius: 7% 8% 15% 30% / 15% 18% 24% 15%;
+    transform: translate3d(0, 15px, 0) rotateZ(2.01deg);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0) rotateZ(-1.01deg);
+  }
+
+  67% {
+    border-radius: 12% 30% 7% 10% / 25% 18% 8% 9%;
+    transform: translate3d(0, -10px, 0) rotateZ(-4.01deg);
+  }
+
+  100% {
+    border-radius: 3% 3% 3% 3% / 3% 3% 3% 3%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  max-height: 500px;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: $br-btn-m;
+  transition: all 0.5s;
+
+  .blur {
+    @include blur($blur: 3px);
+    @include for-phone {
+      @include blur($blur: 0);
+    }
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: $box-shadow-card;
+  animation: shape 5s linear infinite;
+  transition: all 0.5s;
+
+  .blur {
+    opacity: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  height: 99%;
+  padding-left: 1px;
+  margin: 0 auto 45px;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  color: $character-dark-table-header;
+  border-radius: $br-btn-m;
+  padding: $p-xl 0;
+  bottom: 0;
+  z-index: 1;
+  background: $character-yellow;
+  @include for-phone {
+    font-size: 1.2em;
+    padding: $p-m 0;
+  }
+}
