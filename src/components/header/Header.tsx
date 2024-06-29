@@ -3,8 +3,10 @@ import { DateDisplay } from '../date-display/DateDisplay';
 import { Menu } from '../menu/Menu';
 import styles from './header.module.scss';
 import { ROUTES } from '~/constants/routes-constants';
+import { useWindowWidth } from '~/hooks/use-window-width';
 
 export const Header = () => {
+  const { isDesktop } = useWindowWidth();
   return (
     <header className={styles.header}>
       <div className={styles.versions}>
@@ -14,7 +16,7 @@ export const Header = () => {
         </Link>
       </div>
       <Menu />
-      <DateDisplay className={styles.date} />
+      {isDesktop && <DateDisplay className={styles.date} />}
     </header>
   );
 };

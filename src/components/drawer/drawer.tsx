@@ -21,7 +21,10 @@ type DrawerProps = {
   overlayClassName?: string;
 };
 
-type DirectionStyle = Pick<CSSProperties, 'top' | 'left' | 'right' | 'bottom' | 'width' | 'height' | 'transform'>;
+type DirectionStyle = Pick<
+  CSSProperties,
+  'top' | 'left' | 'right' | 'bottom' | 'width' | 'height' | 'transform' | 'WebkitTransform'
+>;
 
 const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionStyle => {
   const directionStyle: Record<IDirection, DirectionStyle> = {
@@ -29,6 +32,7 @@ const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionSt
       top: 0,
       left: 0,
       transform: 'translate(-100%, 0)',
+      //WebkitTransform: 'translate(-100%, 0)',
       width: size,
       height: '100vh',
     },
@@ -36,6 +40,7 @@ const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionSt
       top: 0,
       right: 0,
       transform: 'translate(100%, 0)',
+      //WebkitTransform: 'translate(-100%, 0)',
       width: size,
       height: '100vh',
     },
@@ -44,6 +49,7 @@ const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionSt
       right: 0,
       bottom: 0,
       transform: 'translate(0, 100%)',
+      //WebkitTransform: 'translate(0, 100%)',
       width: '100%',
       height: size,
     },
@@ -52,6 +58,7 @@ const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionSt
       right: 0,
       top: 0,
       transform: 'translate(0, -100%)',
+      //WebkitTransform: 'translate(0, -100%)',
       width: '100%',
       height: size,
     },
@@ -87,6 +94,7 @@ export const Drawer = ({
   const drawerStyles: CSSProperties = {
     zIndex: zIndex + 1,
     transition: `all ${duration}ms`,
+    //WebkitTransition: `all ${duration}ms`,
     ...getDirectionStyle(direction, size),
     ...style,
   };
@@ -94,10 +102,14 @@ export const Drawer = ({
   return (
     <div className={cn(styles.drawer, isOpen && styles.active)}>
       <div
-        style={{ ...drawerStyles, transform: isOpen ? 'translate(0, 0)' : drawerStyles.transform }}
+        style={{
+          ...drawerStyles,
+          transform: isOpen ? 'translate(0, 0)' : drawerStyles.transform,
+          //WebkitTransform: isOpen ? 'translate(0, 0)' : drawerStyles.transform,
+        }}
         className={cn(styles['drawer_container'], styles[direction], className && styles[className])}
       >
-        <CloseXSvg className={styles.close} height={'32px'} width={'32px'} onClick={onClose} />
+        {isOpen && <CloseXSvg className={styles.close} height={'32px'} width={'32px'} onClick={onClose} />}
         {children}
       </div>
       {enableOverlay && (
