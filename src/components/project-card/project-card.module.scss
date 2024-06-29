@@ -6,7 +6,6 @@
   position: relative;
   gap: $gap;
   max-width: 315px;
-
   overflow: hidden;
   color: $character-light-table-header;
 }
@@ -17,9 +16,9 @@
 
 .img {
   width: 100%;
-
   border-radius: 6px;
 }
+
 .img_4x3 {
   aspect-ratio: 4/3;
   object-fit: cover;

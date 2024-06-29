@@ -1,0 +1,50 @@
+@use '../../styles/main.scss' as *;
+
+.drawer .drawer_container {
+  @include flex($direction: column);
+  position: fixed;
+  opacity: 0;
+}
+
+.drawer.active .drawer_overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  @include blur($blur: 3px);
+
+  z-index: 2;
+}
+
+.drawer.active .drawer_container {
+  padding: $p-xl;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 10%);
+  background: $character-light-background;
+  opacity: 1;
+}
+
+.drawer.active .drawer_container.top {
+  border-radius: 0 0 $m-2xl $m-2xl;
+}
+
+.drawer.active .drawer_container.bottom {
+  border-radius: $m-2xl $m-2xl 0 0;
+}
+
+.drawer.active .drawer_container.left {
+  border-radius: 0 $m-2xl $m-2xl 0;
+}
+
+.drawer.active .drawer_container.right {
+  border-radius: $m-2xl 0 0 $m-2xl;
+}
+
+.close {
+  border-radius: 50%;
+  align-self: flex-end;
+}
+
+.close:hover {
+  cursor: pointer;
+  background-color: $palitra2-light;
+}

@@ -21,8 +21,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: $gap-xs;
-    //@include flex;
+
   }
+
   .span__ru,
   .span__en {
     font-weight: 600;
