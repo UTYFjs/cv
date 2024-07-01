@@ -2,14 +2,21 @@
 
 .project-card {
   @include flex($direction: column, $align: center);
-
   position: relative;
   gap: $gap;
   max-width: 315px;
   overflow: hidden;
   color: $character-light-table-header;
+  @include for-phone {
+    max-width: 270px;
+    overflow: visible;
+    gap: $gap-4xs;
+  }
 }
 
+.short-description {
+  text-align: center;
+}
 .img-wrapper {
   position: relative;
 }
@@ -17,6 +24,10 @@
 .img {
   width: 100%;
   border-radius: 6px;
+
+  @include for-phone {
+    margin: $m-s 0;
+  }
 }
 
 .img_4x3 {

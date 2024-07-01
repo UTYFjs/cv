@@ -13,7 +13,7 @@
   left: 0;
   transform: scale(0);
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: all 2.8s;
   z-index: 2;
 }
 
@@ -30,8 +30,9 @@
   height: fit-content;
   max-width: 90%;
   max-height: 90%;
+  transform: scale(0);
   transition: scale 2.8s;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .modal.active .modal_content {

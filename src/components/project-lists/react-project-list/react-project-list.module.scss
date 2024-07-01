@@ -1,32 +1,60 @@
 @use '../../../styles/main.scss' as *;
 
+
 .projects_react {
   @include flex($justify: space-around);
-
-  gap: $gap-14xl;
+  gap: $gap-s;
   max-width: 1600px;
-  max-height: calc(100vh - 220px);
-  height: 100%;
-  overflow: hidden;
+  overflow: hidden ;
+  //max-height: calc(100vh - 220px);
+
+  @include for-phone {
+    @include flex($direction: column, $align: center);
+    gap: $gap-xl;
+    max-width: 1600px;
+    // overflow: hidden auto;
+    //max-height: calc(100vh - 220px);
+  }
 
   .card {
     transform: translateY(110vh);
     opacity: 0;
     transition: all 0.9s ease-in-out;
+
+    @include for-phone {
+      transform: translateY(0);
+      transform: translateX(110vh);
+    }
   }
 
   .card.show {
     margin-top: 8%;
     opacity: 1;
     transform: translateY(0);
+
+    @include for-phone {
+      margin-top: 0;
+      transform: translateY(0);
+      transform: translateX(0);
+    }
   }
 
   .card:nth-of-type(even) {
     transform: translateY(-110vh);
+
+    @include for-phone {
+      transform: translateY(0);
+      transform: translateX(-110vh);
+    }
   }
 
   .card:nth-of-type(even).show {
     margin-top: 0;
-    transform: translateY(0);
+    transform: translatex(0);
+
+    @include for-phone {
+      transform: translateY(0);
+      transform: translateX(0);
+    }
   }
 }

@@ -25,10 +25,16 @@
 }
 
 .tab_content {
-  padding: 20px 20px 50px;
+  padding: 20px 20px 20px;
   background: #1c1c1c95;
   border-radius: 0 15px 15px;
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: hidden auto;
+
+  max-height: calc(100vh - 180px);
+
+  @include for-phone{
+     max-height: 70vh;
+  }
 }

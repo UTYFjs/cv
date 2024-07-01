@@ -26,7 +26,7 @@ export const ProjectTextCard = ({
         <div className={styles.stack}> [ {stack.map((item) => item + ', ')} ]</div>
       </div>
       <div className={styles['description-wrapper']}>
-        <p>{description}</p>
+        <p className={styles['project_description']}>{description}</p>
         <div className={styles.sprints}>
           {' '}
           {sprints &&

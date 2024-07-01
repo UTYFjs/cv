@@ -6,7 +6,7 @@ import { ROUTES } from '~/constants/routes-constants';
 import { useWindowWidth } from '~/hooks/use-window-width';
 
 export const Header = () => {
-  const { isDesktop } = useWindowWidth();
+  const { width } = useWindowWidth();
   return (
     <header className={styles.header}>
       <div className={styles.versions}>
@@ -16,7 +16,7 @@ export const Header = () => {
         </Link>
       </div>
       <Menu />
-      {isDesktop && <DateDisplay className={styles.date} />}
+      {width > 1000 && <DateDisplay className={styles.date} />}
     </header>
   );
 };

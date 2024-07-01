@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Tabs } from '../tabs/tabs';
 import { ProjectSprint } from './project-sprint/project-sprint';
+import { useWindowWidth } from '~/hooks/use-window-width';
 
 type ProjectCardProps = Omit<ProjectDataType, 'id'> & {
   className?: string;
@@ -24,6 +25,7 @@ export const ProjectCard = ({
   className,
 }: ProjectCardProps) => {
   const [isModal, setIsModal] = useState(false);
+  const { isDesktop } = useWindowWidth();
   const containerClassNames = cn(styles['project-card'], className);
   const handleOpenModal = () => {
     setIsModal(true);
@@ -34,11 +36,11 @@ export const ProjectCard = ({
   return (
     <div className={containerClassNames}>
       <h2>[{title}]</h2>
-      <p>{shortDescription}</p>
+      <p className={styles['short-description']}>{shortDescription}</p>
       <div className={styles['img-wrapper']}>
         {' '}
         <img className={styles.img} src={src} alt="image-superboards"></img>
-        {description && (
+        {description && isDesktop && (
           <div className={styles['project-card_description']}>
             {' '}
             <p>{description}</p>
@@ -69,9 +71,9 @@ export const ProjectCard = ({
                   label: `Sprint ${index + 1}`,
                   content: <ProjectSprint sprint={sprint} />,
                 }))}
+                tabContainerStyle={{ maxHeight: 'calc(100% - 480px)', marginBottom: '20px' }}
               ></Tabs>
             }
-            contentStyles={{ width: '80%', height: '80%' }}
             onClose={onCloseModal}
           />,
           document.body

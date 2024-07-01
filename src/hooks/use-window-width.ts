@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 export const useWindowWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
-  const [isDesktop, setIsDesktop] = useState(width > 576);
+  const [isDesktop, setIsDesktop] = useState(width > 600);
 
   useEffect(() => {
-    setIsDesktop(width > 576);
+    setIsDesktop(width > 600);
   }, [width]);
 
   useEffect(() => {

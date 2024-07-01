@@ -76,7 +76,10 @@
   color: $character-dark-table-header;
 }
 .item_text__disable {
-  color: $character-dark-secondary-45;
+  color: $character-dark-table-header;
+  @include for-phone {
+    color: $character-dark-secondary-45;
+  }
 }
 
 .menu_link.active {
