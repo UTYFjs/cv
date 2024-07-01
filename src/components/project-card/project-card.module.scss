@@ -2,7 +2,7 @@
 
 .project-card {
   @include flex($direction: column, $align: center);
-  position: relative;
+  //position: relative;
   gap: $gap;
   max-width: 315px;
   overflow: hidden;
@@ -53,13 +53,8 @@
   right: 0;
 }
 
-.btn_sprints {
-  margin: 0 auto;
-  margin-top: $m;
-}
-
-.btns {
-  @include flex;
-
-  gap: $gap;
+@include for-phone {
+  .img:hover {
+    cursor: pointer;
+  }
 }

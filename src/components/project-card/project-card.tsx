@@ -1,5 +1,4 @@
 import { ProjectDataType } from '~/constants/projects-constants';
-import { Button } from '../button/Button';
 import styles from './project-card.module.scss';
 import cn from 'classnames';
 import { Modal } from '../modal/modal';
@@ -8,6 +7,9 @@ import { createPortal } from 'react-dom';
 import { Tabs } from '../tabs/tabs';
 import { ProjectSprint } from './project-sprint/project-sprint';
 import { useWindowWidth } from '~/hooks/use-window-width';
+import { Drawer } from '../drawer/drawer';
+import { ProjectDescription } from './project-description/project-description';
+import { ProjectButtons } from './project-buttons/project-buttons';
 
 type ProjectCardProps = Omit<ProjectDataType, 'id'> & {
   className?: string;
@@ -25,10 +27,16 @@ export const ProjectCard = ({
   className,
 }: ProjectCardProps) => {
   const [isModal, setIsModal] = useState(false);
-  const { isDesktop } = useWindowWidth();
+  const [isDrawer, setIsDrawer] = useState(false);
+  const { isDesktop, isMobile } = useWindowWidth();
   const containerClassNames = cn(styles['project-card'], className);
+
+  const stackJSX = <div className={styles.stack}> [ {stack.map((item) => item + ', ')} ]</div>;
   const handleOpenModal = () => {
     setIsModal(true);
+  };
+  const handleToggleDrawer = () => {
+    setIsDrawer((state) => !state);
   };
   const onCloseModal = () => {
     setIsModal(false);
@@ -39,27 +47,38 @@ export const ProjectCard = ({
       <p className={styles['short-description']}>{shortDescription}</p>
       <div className={styles['img-wrapper']}>
         {' '}
-        <img className={styles.img} src={src} alt="image-superboards"></img>
+        <img
+          className={styles.img}
+          src={src}
+          alt="image-superboards"
+          onClick={isMobile ? handleToggleDrawer : undefined}
+        ></img>
         {description && isDesktop && (
           <div className={styles['project-card_description']}>
-            {' '}
-            <p>{description}</p>
-            {sprints && (
-              <Button className={styles['btn_sprints']} size="small" onClick={handleOpenModal}>
-                Подробнее
-              </Button>
-            )}
+            <ProjectDescription description={description} sprints={sprints} handleOpenMoreButton={handleOpenModal} />
           </div>
         )}
       </div>
-      <div className={styles.stack}> [ {stack.map((item) => item + ', ')} ]</div>
-      <div className={styles.btns}>
-        {' '}
-        <Button onClick={() => window.open(linkDeploy)}>Deploy</Button>
-        <Button onClick={() => window.open(linkCode)} reverseBg={true}>
-          Code{' '}
-        </Button>
-      </div>
+      {stackJSX}
+      <ProjectButtons linkCode={linkCode} linkDeploy={linkDeploy} />
+      {description &&
+        isMobile &&
+        createPortal(
+          <Drawer isOpen={isDrawer} direction={'bottom'} onClose={handleToggleDrawer}>
+            <ProjectDescription
+              header={
+                <>
+                  <h2>[{title}]</h2>
+                  {stackJSX}
+                </>
+              }
+              description={description}
+              sprints={sprints}
+              footer={<ProjectButtons linkCode={linkCode} linkDeploy={linkDeploy} />}
+            />
+          </Drawer>,
+          document.body
+        )}
       {isModal &&
         sprints &&
         createPortal(

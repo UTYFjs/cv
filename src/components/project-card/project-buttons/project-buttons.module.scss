@@ -1,0 +1,7 @@
+@use '../../../styles/main.scss' as *;
+
+.btns {
+  @include flex;
+
+  gap: $gap;
+}
