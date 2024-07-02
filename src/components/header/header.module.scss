@@ -16,5 +16,6 @@
 @include for-phone {
   .header {
     min-height: 39px;
+    margin-bottom: $m-xl;
   }
 }

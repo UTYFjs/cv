@@ -7,11 +7,6 @@ export const MENUITEMS = [
     tooltip: '',
   },
   {
-    text: 'Skills',
-    route: ROUTES.SKILLS,
-    tooltip: '',
-  },
-  {
     text: 'Projects',
     route: ROUTES.PROJECTS,
     tooltip: '',
@@ -19,6 +14,11 @@ export const MENUITEMS = [
   {
     text: 'Education',
     route: ROUTES.EDUCATION,
+    tooltip: '',
+  },
+  {
+    text: 'Skills',
+    route: ROUTES.SKILLS,
     tooltip: '',
   },
   {

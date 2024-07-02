@@ -5,6 +5,10 @@
 
   border-bottom: 2px solid $palitra2-light;
   padding: $p 0;
+
+  @include for-phone {
+    gap: $gap;
+  }
 }
 
 .title-wrapper {
@@ -16,10 +20,18 @@
 
   .title {
     color: $character-light-table-header;
+
+    @include for-phone {
+      font-size: 1em;
+    }
   }
 
   .stack {
     margin-top: 1rem;
+
+    @include for-phone {
+      font-size: 11px;
+    }
   }
 }
 
@@ -29,6 +41,16 @@
   flex-basis: 80%;
   color: $character-dark-primary-85;
   padding-right: $p-xl;
+
+  @include for-phone {
+    font-size: 13px;
+  }
+
+  .project_description {
+    @include for-phone {
+      padding-right: $p-s;
+    }
+  }
 
   .sprints {
     margin-top: $m-s;
@@ -41,6 +63,10 @@
 
 .list {
   margin-block-start: 0;
+
+  @include for-phone {
+    padding-inline-start: 19px;
+  }
 }
 
 .sprint {
@@ -50,10 +76,17 @@
 
   .sprint_title {
     flex-basis: 50px;
+    @include for-phone {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      align-self: center;
+      flex-basis: 10px;
+    }
   }
 
   .list {
     flex-grow: 1;
+    list-style: none;
   }
 }
 

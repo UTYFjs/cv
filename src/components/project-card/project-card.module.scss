@@ -3,12 +3,19 @@
 .project-card {
   @include flex($direction: column, $align: center);
 
-  position: relative;
   gap: $gap;
   max-width: 315px;
-
   overflow: hidden;
   color: $character-light-table-header;
+  @include for-phone {
+    max-width: 270px;
+    overflow: visible;
+    gap: $gap-4xs;
+  }
+}
+
+.short-description {
+  text-align: center;
 }
 
 .img-wrapper {
@@ -17,9 +24,13 @@
 
 .img {
   width: 100%;
-
   border-radius: 6px;
+
+  @include for-phone {
+    margin: $m-s 0;
+  }
 }
+
 .img_4x3 {
   aspect-ratio: 4/3;
   object-fit: cover;
@@ -43,13 +54,67 @@
   right: 0;
 }
 
-.btn_sprints {
-  margin: 0 auto;
+@include for-phone {
+  .img:hover {
+    cursor: pointer;
+  }
+}
+
+.project-title {
+  text-align: center;
   margin-top: $m;
 }
 
-.btns {
-  @include flex;
+.sprint-title {
+  text-align: center;
+  margin-bottom: $m-m;
+  color: $character-dark-border;
+  font-size: 0.9em;
+  margin-top: $m-xs;
+}
 
-  gap: $gap;
+.my-swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.slide {
+  font-size: 14px;
+  text-align: justify;
+  max-width: 72vw;
+  margin: 0 auto;
+}
+
+.slide_img {
+  display: block;
+  max-width: 72vw;
+  margin: 0 auto $m;
+}
+
+.my-swiper .bullet-class {
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: $character-dark-primary-85;
+  margin: $m-2xs 0;
+  border-radius: 50%;
+}
+
+.my-swiper .bullet-class.bullet-class__active {
+  background: $palitra2-light;
+}
+
+.my-swiper .bullet-class__active-small {
+  background: $palitra2-light;
+}
+
+.bullet-class-small {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: $character-dark-primary-85;
+  margin: 0 $m-4xs;
+  border-radius: 50%;
 }

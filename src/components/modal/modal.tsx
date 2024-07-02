@@ -19,7 +19,7 @@ export const Modal = ({ isActive, body, onClose, contentStyles }: ModalProps) =>
           e.stopPropagation();
         }}
       >
-        <div className={styles['modal_body']}>{body}</div>
+        {body}
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ module.exports = {
     'no-duplicate-selectors': true,
     'font-weight-notation': 'numeric',
     'comment-empty-line-before': 'always',
+    'property-no-vendor-prefix': null,
     //'rule-empty-line-before': 'always-multi-line',
     'color-no-invalid-hex': [true, { reportDisables: true }],
     'selector-pseudo-class-no-unknown': [

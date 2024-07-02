@@ -21,16 +21,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: $gap-xs;
-    //@include flex;
+
   }
+
   .span__ru,
   .span__en {
     font-weight: 600;
   }
-
-  // .links:last-child {
-  //   margin-top: $m;
-  // }
 
   .addition::after {
     content: '\00a0</h1> \a \00a0<div className="btns">';

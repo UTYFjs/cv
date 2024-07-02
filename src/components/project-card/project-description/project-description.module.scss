@@ -1,0 +1,15 @@
+@use '../../../styles/main.scss' as *;
+
+.description-wrapper {
+  @include flex($direction: column, $align: center);
+
+  gap: $gap;
+}
+
+.description{
+  text-align: justify;
+}
+
+.btn_sprints {
+  margin: 0 auto;
+}

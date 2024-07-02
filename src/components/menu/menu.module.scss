@@ -1,116 +1,59 @@
 @use '../../styles/main.scss' as *;
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.menu {
-  @include flex;
-
-  gap: $gap;
-  list-style: none;
-  padding-inline-start: 0;
-}
-
-.menu_item {
-  text-decoration: none;
-  z-index: 1;
+#nav-icon {
+  width: 36px;
+  height: 20px;
   position: relative;
-  width: fit-content;
-  padding: $p-4xs $p-xl;
-  cursor: pointer;
-  background: rgba($color: #000, $alpha: 50%);
-  border-radius: 5px;
-  transition: all 0.5s;
-}
-
-.menu_link {
-  text-decoration: none;
-}
-
-.bg1,
-.bg2,
-.bg1__indevelop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  z-index: -1;
-  transition: all 0.5s;
-}
-
-.bg1 {
-  background: $palitra2-light;
-  transform: rotate(-10deg);
-}
-
-.bg1__indevelop {
-  background: $character-dark-secondary-45;
-  transform: rotate(-10deg);
-}
-
-.item_text {
-  color: $character-dark-table-header;
-}
-
-.menu_link.active {
-  .item_text {
-    font-weight: 900;
-  }
-
-  .bg1 {
-    transform: rotate(0deg);
-    animation: 2s linear 0s infinite pulse;
-  }
-}
-
-[data-tooltip] {
-  position: relative; /* Относительное позиционирование */
-}
-
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  width: 170px; /* Ширина подсказки */
-  right: 0;
-  top: 0; /* Положение подсказки */
-  background: #292929; /* цвет фона */
-  font-size: 11px;
-  font-weight: 400;
-  color: #fff; /* Цвет текста */
-  border-radius: 12px;
-  margin-top: 12px;
-  padding: 0.5em; /* Поля вокруг текста */
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 30%); /* Параметры тени */
-  pointer-events: none; /* Подсказка */
-  opacity: 0;
-  transition: 1s;
-}
-
-[data-tooltip]:hover::after {
-  opacity: 0.9;
-  top: 2.2em;
-}
-
-.menu_item :hover + .bg1 {
+  margin-top: $m-s;
+  margin-right: $m-s;
+  padding: $p;
   transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
-@include for-phone {
-  .menu {
-    gap: $gap-xs;
-  }
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: $palitra2-light;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0;
+}
+
+#nav-icon span:nth-child(2),
+#nav-icon span:nth-child(3) {
+  top: 12px;
+}
+
+#nav-icon span:nth-child(4) {
+  top: 24px;
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
 }

@@ -99,7 +99,6 @@ export const PROJECT_REACT_DATA: ProjectDataType[] = [
           },
           {
             text: 'Различия при работе с мобильным и полноформатным календарем',
-            //srcImg: './image/cleverfit/calendar_2_360.jpg',
             srcImg: './image/cleverfit/calendar_mobile.jpg',
           },
           {

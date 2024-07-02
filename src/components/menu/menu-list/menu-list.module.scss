@@ -1,0 +1,142 @@
+@use '../../../styles/main.scss' as *;
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menu {
+  @include flex;
+
+  gap: $gap;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.menu.mobile {
+  @include flex($direction: column, $align: center);
+
+  gap: $gap-3xl;
+}
+
+.menu_item {
+  text-decoration: none;
+  z-index: 1;
+  position: relative;
+  width: fit-content;
+  padding: $p-4xs $p-xl;
+  cursor: pointer;
+  background: rgba($color: #000, $alpha: 50%);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.menu_item__mobile {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+
+.menu_link {
+  text-decoration: none;
+}
+
+.bg1,
+.bg2,
+.bg1__indevelop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.bg1 {
+  background: $palitra2-light;
+  transform: rotate(-10deg);
+}
+
+.bg1__indevelop {
+  background: $character-dark-secondary-45;
+  transform: rotate(-10deg);
+}
+
+.item_text {
+  color: $character-dark-table-header;
+}
+
+.item_text__disable {
+  color: $character-dark-table-header;
+  @include for-phone {
+    color: $character-dark-secondary-45;
+  }
+}
+
+.menu_link.active {
+  .item_text {
+    font-weight: 900;
+  }
+
+  .bg1 {
+    transform: rotate(0deg);
+    animation: 2s linear 0s infinite pulse;
+  }
+}
+
+.menu.mobile .menu_link.active .item_text {
+  color: $palitra2-light;
+  text-decoration: underline;
+}
+
+[data-tooltip] {
+  position: relative; /* Относительное позиционирование */
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 170px; /* Ширина подсказки */
+  right: 0;
+  top: 0; /* Положение подсказки */
+  background: #292929; /* цвет фона */
+  font-size: 11px;
+  font-weight: 400;
+  color: #fff; /* Цвет текста */
+  border-radius: 12px;
+  margin-top: 12px;
+  padding: 0.5em; /* Поля вокруг текста */
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 30%); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0;
+  transition: 1s;
+  z-index: 44;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 0.9;
+  top: 2.2em;
+  z-index: 44;
+}
+
+.menu_item :hover + .bg1 {
+  transform: rotate(0deg);
+}
+
+@include for-phone {
+  .menu {
+    gap: $gap-xs;
+  }
+}
