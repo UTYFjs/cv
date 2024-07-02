@@ -21,8 +21,10 @@
   list-style: none;
   padding-inline-start: 0;
 }
+
 .menu.mobile {
   @include flex($direction: column, $align: center);
+
   gap: $gap-3xl;
 }
 
@@ -75,6 +77,7 @@
 .item_text {
   color: $character-dark-table-header;
 }
+
 .item_text__disable {
   color: $character-dark-table-header;
   @include for-phone {

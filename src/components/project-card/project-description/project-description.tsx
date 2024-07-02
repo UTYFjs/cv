@@ -8,7 +8,7 @@ type ProjectDescriptionProps = {
   description?: string;
   sprints?: SprintType[];
   footer?: React.ReactNode;
-  handleOpenMoreButton?: () => void;
+  handleOpenSprintsButton?: () => void;
 };
 
 export const ProjectDescription = ({
@@ -16,7 +16,7 @@ export const ProjectDescription = ({
   description,
   sprints,
   footer,
-  handleOpenMoreButton,
+  handleOpenSprintsButton,
 }: ProjectDescriptionProps) => {
   return (
     <div className={styles['description-wrapper']}>
@@ -26,8 +26,8 @@ export const ProjectDescription = ({
           {' '}
           <p className={styles.description}>{description}</p>
           {sprints && (
-            <Button className={styles['btn_sprints']} size="small" onClick={handleOpenMoreButton}>
-              Подробнее
+            <Button className={styles['btn_sprints']} size="small" onClick={handleOpenSprintsButton}>
+              Подробнее о спринтах
             </Button>
           )}
         </>

@@ -2,14 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import cn from 'classnames';
 import styles from './drawer.module.scss';
-import { CloseXSvg } from '../custom-icons/CustomIcons';
+import { ArrowBackSvg, CloseXSvg } from '../custom-icons/CustomIcons';
 
 type IDirection = 'left' | 'right' | 'top' | 'bottom';
 
 type DrawerProps = {
   isOpen: boolean;
   direction: IDirection;
-  onClose?: VoidFunction;
+  isBack?: boolean;
+  onBack?: () => void;
+  onClose?: () => void;
   children?: React.ReactNode;
   duration?: number;
   overlayStyles?: CSSProperties;
@@ -72,7 +74,10 @@ const getDirectionStyle = (dir: IDirection, size?: number | string): DirectionSt
 
 export const Drawer = ({
   isOpen,
+
   direction,
+  isBack,
+  onBack,
   onClose = () => {},
   children,
   style,
@@ -103,6 +108,10 @@ export const Drawer = ({
     ...style,
   };
 
+  const handleClose = () => {
+    onClose();
+    onBack && onBack();
+  };
   return (
     <div className={cn(styles.drawer, isOpen && styles.active)}>
       <div
@@ -113,13 +122,21 @@ export const Drawer = ({
         }}
         className={cn(styles['drawer_container'], styles[direction], className && styles[className])}
       >
-        {isOpen && <CloseXSvg className={styles.close} height={'32px'} width={'32px'} onClick={onClose} />}
+        <div className={styles['drawer-controls']}>
+          {isBack ? (
+            <ArrowBackSvg className={styles.back} height={'32px'} width={'32px'} onClick={onBack} />
+          ) : (
+            <span></span>
+          )}
+          {isOpen && <CloseXSvg className={styles.close} height={'32px'} width={'32px'} onClick={handleClose} />}
+        </div>
+
         {children}
       </div>
       {enableOverlay && (
         <div
           className={cn(styles['drawer_overlay'], overlayClassName && styles[overlayClassName])}
-          onClick={onClose}
+          onClick={handleClose}
           style={overlayStyles}
         />
       )}

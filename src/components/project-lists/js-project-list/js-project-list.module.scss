@@ -8,8 +8,7 @@
   justify-content: center;
   justify-items: center;
   max-height: calc(100vh - 220px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
 
   @include for-phone {
     grid-template-columns: 80%;

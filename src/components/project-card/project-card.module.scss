@@ -2,7 +2,7 @@
 
 .project-card {
   @include flex($direction: column, $align: center);
-  //position: relative;
+
   gap: $gap;
   max-width: 315px;
   overflow: hidden;
@@ -17,6 +17,7 @@
 .short-description {
   text-align: center;
 }
+
 .img-wrapper {
   position: relative;
 }
@@ -57,4 +58,50 @@
   .img:hover {
     cursor: pointer;
   }
+}
+
+.project-title {
+  text-align: center;
+  margin-top: $m;
+}
+
+.sprint-title {
+  text-align: center;
+  margin-bottom: $m-m;
+  color: $character-dark-border;
+  font-size: 0.9em;
+  margin-top: $m-xs;
+}
+
+.my-swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.slide {
+  font-size: 14px;
+  text-align: justify;
+  max-width: 72vw;
+  margin: 0 auto;
+}
+
+.slide_img {
+  display: block;
+  max-width: 72vw;
+  margin: 0 auto $m;
+}
+
+.my-swiper .bullet-class {
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: $character-dark-primary-85;
+  margin: 7px 0;
+  border-radius: 50%;
+}
+
+.my-swiper .bullet-class.bullet-class__active {
+  background: #007aff;
 }

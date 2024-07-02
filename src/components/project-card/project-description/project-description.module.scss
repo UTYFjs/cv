@@ -2,6 +2,7 @@
 
 .description-wrapper {
   @include flex($direction: column, $align: center);
+
   gap: $gap;
 }
 
@@ -11,5 +12,4 @@
 
 .btn_sprints {
   margin: 0 auto;
-  margin-top: $m;
 }

@@ -1460,7 +1460,38 @@ export const CloseXSvg = ({
     </g>
   </svg>
 );
-//   export const JSSvg = ({ color = 'currentColor', className, width = '100%', height = '100%', onClick }: SvgProps) =>()
+export const ArrowBackSvg = ({
+  color = 'currentColor',
+  className,
+  width = '100%',
+  height = '100%',
+  onClick,
+}: SvgProps) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    onClick={onClick}
+    viewBox="0 0 24.00 24.00"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+
+    <g id="SVGRepo_iconCarrier">
+      {' '}
+      <path
+        d="M6 12H18M6 12L11 7M6 12L11 17"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />{' '}
+    </g>
+  </svg>
+);
 //   export const JSSvg = ({ color = 'currentColor', className, width = '100%', height = '100%', onClick }: SvgProps) =>()
 //   export const JSSvg = ({ color = 'currentColor', className, width = '100%', height = '100%', onClick }: SvgProps) =>()
 //   export const JSSvg = ({ color = 'currentColor', className, width = '100%', height = '100%', onClick }: SvgProps) =>()

@@ -46,7 +46,8 @@
         "react-use-gesture": "5.0.0",
         "redux-persist": "^6.0.0",
         "sass": "^1.77.2",
-        "sass-loader": "^14.2.1"
+        "sass-loader": "^14.2.1",
+        "swiper": "^11.1.4"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -95,6 +96,9 @@
         "vite-plugin-html": "^3.2.2",
         "vitest": "^1.6.0"
     },
+    "tags": [
+        "swiper"
+    ],
     "lint-staged": {
         "*.{ts,tsx,js,jsx}": [
             "prettier --write",

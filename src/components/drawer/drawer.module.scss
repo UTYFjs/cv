@@ -2,8 +2,10 @@
 
 .drawer .drawer_container {
   @include flex($direction: column);
+
   position: fixed;
   opacity: 0;
+  transition: height 0.6s;
 }
 
 .drawer.active .drawer_overlay {
@@ -39,12 +41,21 @@
   border-radius: $m-2xl 0 0 $m-2xl;
 }
 
-.close {
+.close,
+.back {
   border-radius: 50%;
-  align-self: flex-end;
 }
 
-.close:hover {
+.close {
+  place-self: flex-end flex-end;
+}
+
+.close:hover,
+.back:hover {
   cursor: pointer;
   background-color: $palitra2-light;
+}
+
+.drawer-controls {
+  @include flex($justify: space-between);
 }
