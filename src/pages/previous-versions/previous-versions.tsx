@@ -1,91 +1,54 @@
+import { VersionItem, VersionProps } from '~/components/version/version';
 import styles from './previous-versions.module.scss';
+import { nanoid } from 'nanoid';
+
+const versions_data: VersionProps[] = [
+  {
+    version: 0.1,
+    title: 'Начало проекта',
+    features: [
+      'Проработка идеи и концепции',
+      'Опредление стека и конфигурация проекта',
+      'Проработка основной идеи дизайна и пользовательского интерфейса',
+      'Main Page с parallax анимациями',
+    ],
+    linkToDeploy: 'https://deploy-preview-3--suhakou-henadzi.netlify.app/',
+  },
+  {
+    version: 0.2,
+    title: 'Project page (Desktop)',
+    features: ['Определение основных разделов проекта', 'Главное меню', 'Projects Page', 'Страница предыдущих версий'],
+    linkToDeploy: 'https://deploy-preview-5--suhakou-henadzi.netlify.app/',
+  },
+  {
+    version: 0.3,
+    title: 'Skills & Contacts',
+    features: ['Skills page', 'Contacts page'],
+    linkToDeploy: 'https://deploy-preview-6--suhakou-henadzi.netlify.app/',
+  },
+  {
+    version: 0.4,
+    title: 'Education',
+    features: ['Education page', 'Добавлен PDF English version'],
+    linkToDeploy: 'https://deploy-preview-7--suhakou-henadzi.netlify.app',
+  },
+  {
+    version: 0.5,
+    title: 'Projects & Menu (Mobile)',
+    features: [
+      'Drawer Component',
+      'Добавлено мобильное меню',
+      'Адаптив для Project Page',
+      'Добавлен Swiper для отображения информации о спринтах проекта в мобильной версии',
+    ],
+    linkToDeploy: '',
+  },
+];
 
 export const PreviousVersions = () => (
   <div className={styles.previous}>
-    <div className={styles.version}>
-      <div className={styles['version-content']}>
-        <p className={styles['version_title']}>V0.1</p>
-        <div className={styles['version_description']}>
-          <p className={styles['version_name']}>Начало проекта</p>
-          <ul className={styles.list}>
-            <li>Проработка идеи и концепции</li>
-            <li>Опредление стека и конфигурация проекта </li>
-            <li>Проработка основной идеи дизайна и пользовательского интерфейса</li>
-            <li>Main Page с parallax анимациями</li>
-          </ul>
-          <a
-            className={styles.link}
-            href="https://deploy-preview-3--suhakou-henadzi.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Link V0.1
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className={styles.version}>
-      <div className={styles['version-content']}>
-        {' '}
-        <p className={styles['version_title']}>V0.2</p>{' '}
-        <div className={styles['version_description']}>
-          <p className={styles['version_name']}> Project page (Desktop)</p>
-          <ul className={styles.list}>
-            <li>Определение основных разделов проекта</li>
-            <li>Главное меню</li>
-            <li>Projects Page</li>
-            <li>Страница предыдущих версий</li>
-          </ul>
-
-          <a
-            className={styles.link}
-            href="https://deploy-preview-5--suhakou-henadzi.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Link V0.2
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className={styles.version}>
-      <div className={styles['version-content']}>
-        {' '}
-        <p className={styles['version_title']}>V0.3</p>{' '}
-        <div className={styles['version_description']}>
-          <p className={styles['version_name']}> Skills & Contacts</p>
-          <ul className={styles.list}>
-            <li>Skills page</li>
-            <li>Contacts page</li>
-          </ul>
-
-          <a
-            className={styles.link}
-            href="https://deploy-preview-6--suhakou-henadzi.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Link V0.3
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className={styles.version}>
-      <div className={styles['version-content']}>
-        {' '}
-        <p className={styles['version_title']}>V0.4</p>{' '}
-        <div className={styles['version_description']}>
-          <p className={styles['version_name']}> Education</p>
-          <ul className={styles.list}>
-            <li>Education page</li>
-            <li>Добавлен PDF English version</li>
-          </ul>
-
-          <a className={styles.link} href="https://suhakou-henadzi.netlify.app/" target="_blank" rel="noreferrer">
-            Link Current version
-          </a>
-        </div>
-      </div>
-    </div>
+    {versions_data.map((version) => (
+      <VersionItem key={nanoid()} {...version} />
+    ))}
   </div>
 );

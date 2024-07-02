@@ -6,3 +6,5 @@ export const ROUTES = {
   CONTACTS: 'contacts',
   EDUCATION: 'education',
 };
+
+export const LINK_CV = 'https://suhakou-henadzi.netlify.app/';

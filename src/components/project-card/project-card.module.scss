@@ -98,10 +98,23 @@
   text-align: center;
   line-height: 20px;
   background: $character-dark-primary-85;
-  margin: 7px 0;
+  margin: $m-2xs 0;
   border-radius: 50%;
 }
 
 .my-swiper .bullet-class.bullet-class__active {
-  background: #007aff;
+  background: $palitra2-light;
+}
+
+.my-swiper .bullet-class__active-small {
+  background: $palitra2-light !important;
+}
+
+.bullet-class-small {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: $character-dark-primary-85;
+  margin: 0 $m-4xs;
+  border-radius: 50%;
 }

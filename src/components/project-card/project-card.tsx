@@ -131,6 +131,8 @@ export const ProjectCard = ({
                             enabled: true,
                           }}
                           pagination={{
+                            bulletClass: styles['bullet-class-small'],
+                            bulletActiveClass: styles['bullet-class__active-small'],
                             clickable: true,
                           }}
                           modules={[Pagination]}
