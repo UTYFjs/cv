@@ -47,8 +47,11 @@ export const ProjectCard = ({
   const onCloseModal = () => {
     setIsModal(false);
   };
-  const handleToggleProjectSprints = () => {
-    setIsDrawerSprints((state) => !state);
+  const handleOpenProjectSprints = () => {
+    setIsDrawerSprints(true);
+  };
+  const handleCloseProjectSprints = () => {
+    setIsDrawerSprints(false);
   };
   const handleToggleDrawer = () => {
     setIsDrawer((state) => !state);
@@ -81,7 +84,7 @@ export const ProjectCard = ({
             isOpen={isDrawer}
             direction={'bottom'}
             onClose={handleToggleDrawer}
-            onBack={handleToggleProjectSprints}
+            onBack={handleCloseProjectSprints}
           >
             {isDrawer && !isDrawerSprints && (
               <ProjectDescription
@@ -94,7 +97,7 @@ export const ProjectCard = ({
                 description={description}
                 sprints={sprints}
                 footer={<ProjectButtons linkCode={linkCode} linkDeploy={linkDeploy} />}
-                handleOpenSprintsButton={handleToggleProjectSprints}
+                handleOpenSprintsButton={handleOpenProjectSprints}
               />
             )}
             {isDrawer && isDrawerSprints && (
