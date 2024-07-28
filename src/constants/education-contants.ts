@@ -4,6 +4,13 @@ import { CertificateType } from '~/pages/education/education';
 export const certificate: CertificateType[] = [
   {
     id: nanoid(),
+    imgSrc: './image/education/playwright.webp',
+    link: 'https://www.udemy.com/certificate/UC-94119a17-9b48-4d07-b81e-5a680f9fc6ed/',
+    title: 'Playwright - Web Automation Testing',
+    schoolLink: '',
+  },
+  {
+    id: nanoid(),
     imgSrc: './image/education/algo-5.0.webp',
     link: 'https://certify.s3.yandex.net/young-yandex/c1f747d9-e377-4f81-bb67-3e72d31660c1/8d44af91-4899-4efa-9a53-204f0c2157d1.pdf?m-message-key-id=-207165574941442048&m-message-click-id=0ed18715-5825-40ba-9b24-84b765389c2a&utm_source=mindbox&utm_medium=email&utm_campaign=training5&utm_content=certificate',
     title: 'Тренировки по алгоритмам 5.0 / Yandex',

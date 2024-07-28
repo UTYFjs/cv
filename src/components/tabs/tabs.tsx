@@ -45,8 +45,10 @@ export const Tabs = ({ tabs, className, tabContainerStyle }: TabsProps) => {
   );
 };
 
-Tabs.Item = ({ label, onClick, isActive }: TabItemProps) => (
-  <div className={cn(styles.tab, isActive && styles.active)} onClick={onClick}>
-    {label}
-  </div>
-);
+Tabs.Item = ({ label, onClick, isActive }: TabItemProps) => {
+  return (
+    <div className={cn(styles.tab, isActive && styles.active)} onClick={onClick}>
+      {label}
+    </div>
+  );
+};

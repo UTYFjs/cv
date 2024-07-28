@@ -12,7 +12,7 @@ export const ProjectButtons = ({ linkDeploy, linkCode }: ProjectButtonsProps) =>
       {' '}
       <div className={styles.btns}>
         {' '}
-        <Button onClick={() => window.open(linkDeploy)}>Deploy</Button>
+        <Button onClick={() => window.open(linkDeploy)}>Demo</Button>
         <Button onClick={() => window.open(linkCode)} reverseBg={true}>
           Code{' '}
         </Button>

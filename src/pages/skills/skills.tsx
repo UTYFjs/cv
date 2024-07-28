@@ -13,7 +13,9 @@ import {
   MUISvg,
   NPMSvg,
   NestJSSvg,
+  NextJSSvg,
   NodeJSSvg,
+  PlaywrightSvg,
   PrettierSvg,
   PrismaSvg,
   RTLSvg,
@@ -45,6 +47,11 @@ const skills = [
     icon: <TSSvg color="#3178c6" {...cssWidthHeight} />,
     title: 'TypeScript',
     link: 'https://www.typescriptlang.org/',
+  },
+  {
+    icon: <NextJSSvg {...cssWidthHeight} />,
+    title: 'Next.js',
+    link: 'https://nextjs.org/',
   },
   { icon: <ReactSvg color="#127ea4" {...cssWidthHeight} />, title: 'React', link: 'https://react.dev/' },
   {
@@ -102,7 +109,11 @@ const skills = [
     title: 'React Hook Form',
     link: 'https://react-hook-form.com/',
   },
-
+  {
+    icon: <PlaywrightSvg {...cssWidthHeight} />,
+    title: 'Playwright E2E',
+    link: 'https://playwright.dev/',
+  },
   {
     icon: <JestSvg {...cssWidthHeight} />,
     title: 'Jest',

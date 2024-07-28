@@ -106,12 +106,12 @@ export const MainPage = () => {
               <Button
                 reverseBg={false}
                 style={{ width: '100%' }}
-                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_25.06.24_EN.pdf')}
+                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_27.07.24_EN.pdf')}
               >
                 Download PDF <span className="span__en">(EN)</span>
               </Button>
               <Link
-                to={'https://drive.google.com/file/d/1kR21eJJVyWnMAplYq49S9ytlGQ4SVzCl/view?usp=drive_link'}
+                to={'https://drive.google.com/file/d/1V4iITYr0WUYNhCzuLf4NSCemVhkJ6lA9/view?usp=sharing'}
                 target="_blank"
               >
                 {' '}
@@ -123,12 +123,12 @@ export const MainPage = () => {
               <Button
                 reverseBg={true}
                 style={{ width: '100%' }}
-                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_25.06.24_RU.pdf')}
+                onClick={() => handleDownloadCV('CV_Suhakou_Henadzi_27.07.24_RU.pdf')}
               >
                 Скачать PDF <span className="span__ru">(RU)</span>
               </Button>
               <Link
-                to="https://drive.google.com/file/d/1Bf-rnlbxpEzaD5Bo4gmI67KTyXK_0BTW/view?usp=drive_link"
+                to="https://drive.google.com/file/d/11JRDSn5rXg0qz4rdq2JtNBbIzGTqoIsF/view?usp=sharing"
                 target="_blank"
               >
                 <Button style={{ width: '100%' }}>

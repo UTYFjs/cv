@@ -23,6 +23,22 @@ export type ProjectDataType = {
   sprints?: SprintType[];
   features?: string[];
 };
+
+export const PROJECT_NEXT_DATA: ProjectDataType[] = [
+  {
+    id: nanoid(),
+    title: 'The Wildhood Oasis Hotel',
+    src: './image/wildhood-vertical.jpg',
+    shortDescription: 'Отель с возможностью бронирования',
+    description: `Индивидуальный проект. Сайт отеля, выполнен с помощью Next.JS. Aвторизация – NextAuth (OAuth –Google). База данных – Supabase.
+  На сайте можно ознакомиться с номерами, отфильтровать их по вместимости
+  После авторизации, можно забронировать номер, отследить свои предыдущие бронирования, изменить и удалить их при необходимости, а так же доступна возможность редактирования профиля клиента.`,
+    stack: ['TS', 'Next', 'Tailwind', 'NextAuth', 'Supabase'],
+    linkDeploy: 'https://wildhood-oasis.vercel.app/',
+    linkCode: 'https://github.com/UTYFjs/next-hotel',
+  },
+];
+
 export const PROJECT_REACT_DATA: ProjectDataType[] = [
   {
     id: nanoid(),

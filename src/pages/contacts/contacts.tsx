@@ -47,7 +47,7 @@ export const Contacts = () => {
       <div className={styles.contacts}>
         <div className={styles.vertical}>CONTACT ME:</div>
         <div className={styles['contact-list']}>
-          <Link className={styles['contact-link']} to="tel:+995595909226">
+          <Link className={styles['contact-link']} to="tel:+375292437459">
             <p className={styles['contact-title']}>tel:</p>
             <span> +375292437459</span>
           </Link>
