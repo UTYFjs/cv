@@ -1,0 +1,7 @@
+@use '../../../styles/main.scss' as *;
+
+.projects_next {
+  @include flex($justify: space-around, $align: center);
+
+
+}

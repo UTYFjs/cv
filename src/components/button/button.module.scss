@@ -19,6 +19,10 @@
   background-size: 200%;
   background-position-x: 100%;
   transition: all 0.9s;
+
+  @include for-phone{
+    font-size: $fs-m;
+  }
 }
 
 .btn.reverse {
