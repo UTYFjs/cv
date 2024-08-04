@@ -1,6 +1,6 @@
 import { ProjectDataType } from '~/constants/projects-constants';
 import { Modal } from '../modal/modal';
-import { useState } from 'react';
+import { CSSProperties, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Tabs } from '../tabs/tabs';
 import { ProjectSprint } from './project-sprint/project-sprint';
@@ -20,6 +20,7 @@ import styles from './project-card.module.scss';
 
 type ProjectCardProps = Omit<ProjectDataType, 'id'> & {
   className?: string;
+  stylesImg?: CSSProperties;
 };
 
 export const ProjectCard = ({
@@ -32,6 +33,7 @@ export const ProjectCard = ({
   sprints,
   stack,
   className,
+  stylesImg,
 }: ProjectCardProps) => {
   const [isModal, setIsModal] = useState(false);
   const [isDrawer, setIsDrawer] = useState(false);
@@ -61,11 +63,12 @@ export const ProjectCard = ({
     <div className={containerClassNames}>
       <h2 className={styles['project-title']}>[{title}]</h2>
       <p className={styles['short-description']}>{shortDescription}</p>
-      <div className={styles['img-wrapper']}>
+      <div className={styles['img-wrapper']} style={stylesImg}>
         <img
           className={styles.img}
+          style={stylesImg}
           src={src}
-          alt="image-superboards"
+          alt={`image-${title}`}
           onClick={isMobile ? handleToggleDrawer : undefined}
         />
         {description && isDesktop && (

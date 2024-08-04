@@ -27,6 +27,7 @@ export const JsProjectList = () => {
           linkDeploy={linkDeploy}
           linkCode={linkCode}
           stack={stack}
+          stylesImg={{ aspectRatio: '1.3/1' }}
         />
       ))}
     </div>

@@ -29,6 +29,7 @@ export const NextProjectList = () => {
             linkDeploy={linkDeploy}
             linkCode={linkCode}
             stack={stack}
+            stylesImg={{ aspectRatio: '1/1.05' }}
           />
         )
       )}
