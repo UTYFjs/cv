@@ -20,11 +20,14 @@
 
 .img-wrapper {
   position: relative;
+  width: 100%;
+  object-fit: cover;
 }
 
 .img {
   width: 100%;
   border-radius: 6px;
+  object-fit: cover;
 
   @include for-phone {
     margin: $m-s 0;
